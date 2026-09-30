@@ -34,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             font-family: var(--font-heading);
             text-transform: uppercase;
@@ -47,12 +46,11 @@
             transition: all 0.3s ease;
         }
 
-        /* Header & Nav */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -63,11 +61,22 @@
         }
 
         .logo {
-            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
             font-weight: 900;
             color: var(--fuchsia);
             letter-spacing: 2px;
-            text-shadow: 0 0 12px var(--fuchsia-glow);
+            font-family: var(--font-heading);
         }
 
         nav a {
@@ -82,7 +91,6 @@
             color: var(--fuchsia);
         }
 
-        /* Hero Section */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -95,18 +103,21 @@
             border-bottom: 1px solid var(--border-color);
         }
 
+        .hero-logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 25px;
             color: #ffffff;
             max-width: 900px;
-        }
-
-        .hero h1 span {
-            color: var(--fuchsia);
-            display: block;
         }
 
         .hero p {
@@ -136,7 +147,6 @@
             box-shadow: 0 0 30px rgba(255, 0, 127, 0.4);
         }
 
-        /* Sections General */
         section {
             padding: 100px 10%;
             border-bottom: 1px solid var(--border-color);
@@ -174,7 +184,6 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* Grid Layouts */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -183,11 +192,10 @@
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        /* Cards */
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -200,6 +208,34 @@
             transform: translateY(-5px);
             border-color: var(--fuchsia);
             box-shadow: 0 5px 25px rgba(255, 0, 127, 0.1);
+        }
+
+        .team-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover {
+            border-color: var(--fuchsia);
+            transform: translateY(-4px);
+        }
+
+        .team-photo-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #1a1a22;
+            border: 2px dashed var(--fuchsia);
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
         }
 
         .project-card {
@@ -254,7 +290,6 @@
             border-radius: 0 4px 4px 0;
         }
 
-        /* Manifesto & Lab Section */
         .manifesto-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -263,15 +298,6 @@
             border-radius: 4px;
         }
 
-        .manifesto-quote {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.8;
-            color: #ffffff;
-        }
-
-        /* Footer */
         footer {
             padding: 60px 10%;
             text-align: center;
@@ -285,7 +311,6 @@
             color: #ffffff;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.3rem; }
             nav { display: none; }
@@ -296,10 +321,13 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
-        <div class="logo">GIRIAMOLA!</div>
+        <div class="logo">
+            <img src="IMG_5054.png" alt="GIRIAMOLA!" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="logo-text" style="display:none;">GIRIAMOLA!</span>
+        </div>
         <nav>
+            <a href="#chi-siamo">Chi Siamo</a>
             <a href="#progetti">Slate Progetti</a>
             <a href="#vision">Visione</a>
             <a href="#laboratorio">Laboratorio</a>
@@ -307,23 +335,69 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
+        <img src="IMG_4973.jpg" alt="Giriamola Logo" class="hero-logo" onerror="this.style.display='none';">
         <h1>IL FENICOTTERO È L'UNICA COSA CHE CONTA.</h1>
-        <p>Hub di sviluppo e produzione cinematografica indipendente. Raccontiamo storie.</p>
+        <p>Hub di sviluppo e produzione cinematografica indipendente. Trasformiamo visioni autoriali e ricerca drammaturgica in progetti audiovisivi ad alto valore industriale per il mercato contemporaneo.</p>
         <a href="#progetti" class="btn">Esplora lo Slate Progetti</a>
     </section>
 
-    <!-- Slate Progetti Section -->
+    <!-- SEZIONE CHI SIAMO -->
+    <section id="chi-siamo">
+        <h2 class="section-title">Chi Siamo</h2>
+        <p class="section-subtitle">Il collettivo, la visione e le persone dietro le nostre produzioni.</p>
+        
+        <div class="manifesto-box" style="margin-bottom: 50px;">
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
+                <strong style="color: #ffffff;">Giriamola!</strong> è una produzione indipendente che prende vita dall’incontro tra registi, autori e attori legati da una forte affinità artistica, maturata anche attraverso l'esperienza condivisa al <strong style="color: #ffffff;">Centro Sperimentale di Cinematografia</strong>.
+            </p>
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
+                L'architettura del gruppo nasce da un'intuizione di <strong style="color: #ffffff;">Riccardo Martone</strong>, che individua la forza del collettivo e la giusta alchimia tra i talenti: è lui a selezionare e far incontrare i professionisti più adatti per ogni singolo progetto, valorizzando l'unione tra le visioni dei due registi principali, <strong style="color: #ffffff;">Federico Tallone</strong> e <strong style="color: #ffffff;">Lorenzo Lancellotti</strong>.
+            </p>
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
+                Un ecosistema che unisce competenze diverse e complementari:
+            </p>
+            <ul style="color: var(--text-muted); margin-left: 20px; font-size: 1rem; line-height: 1.8; margin-bottom: 20px;">
+                <li style="margin-bottom: 10px;"><strong style="color: #ffffff;">Federico Tallone</strong> ha sviluppato negli anni un'importante esperienza sul campo, lavorando su numerosi set — sia indipendenti che industriali — e nella realizzazione di reportage.</li>
+                <li><strong style="color: #ffffff;">Riccardo Martone</strong> e <strong style="color: #ffffff;">Lorenzo Lancellotti</strong> si sono diplomati al Centro Sperimentale di Cinematografia, costruendo un percorso focalizzato sulla drammaturgia attiva e sulla direzione degli attori.</li>
+            </ul>
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+                Attorno a loro si è consolidato un gruppo affiatato di interpreti che, fin dalle prime esperienze, ha partecipato alla fondazione e alla crescita di Giriamola!, tra cui <strong style="color: #ffffff;">Leonardo Cappelli</strong>, <strong style="color: #ffffff;">Aurora Di Modugno</strong>, <strong style="color: #ffffff;">Nicola Brando Parini</strong> e <strong style="color: #ffffff;">Manuel Rossi</strong>.
+            </p>
+        </div>
+
+        <h3 class="category-header">IL NUCLEO</h3>
+        <div class="grid-3">
+            <div class="team-card">
+                <div class="team-photo-placeholder">[Foto]</div>
+                <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 5px;">Riccardo Martone</h3>
+                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Sviluppo Progetti, Casting & Coordinamento</p>
+                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
+            </div>
+
+            <div class="team-card">
+                <div class="team-photo-placeholder">[Foto]</div>
+                <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 5px;">Federico Tallone</h3>
+                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Regia & Sceneggiatura</p>
+                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
+            </div>
+
+            <div class="team-card">
+                <div class="team-photo-placeholder">[Foto]</div>
+                <h3 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 5px;">Lorenzo Lancellotti</h3>
+                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Regia & Produzione</p>
+                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE SLATE PROGETTI -->
     <section id="progetti">
         <h2 class="section-title">Slate Progetti</h2>
         <p class="section-subtitle">Il nostro catalogo di produzioni e opere in fase di sviluppo, produzione e distribuzione.</p>
 
-        <!-- Sezione Lungometraggi -->
         <h3 class="category-header">LUNGOMETRAGGI</h3>
         <div class="grid-2">
-            
-            <!-- Oscar -->
             <div class="project-card">
                 <div>
                     <div class="project-tag">In Uscita</div>
@@ -336,7 +410,6 @@
                 </div>
             </div>
 
-            <!-- Porcate! -->
             <div class="project-card">
                 <div>
                     <div class="project-tag">In Sviluppo</div>
@@ -347,21 +420,18 @@
                     </p>
                 </div>
             </div>
-
         </div>
 
-        <!-- Sezione Cortometraggi -->
         <h3 class="category-header">CORTOMETRAGGI</h3>
         <div class="grid-2">
-
-            <!-- Tu Mi Piaci, Ma Non Corriamo -->
             <div class="project-card">
                 <div>
                     <div class="project-tag">Premiato</div>
                     <h3 class="project-title">TU MI PIACI, MA NON CORRIAMO</h3>
                     <div class="project-meta">Produzione: <strong>Giriamola! × Corti Futuri</strong></div>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">
-                        <strong>Regia & Sceneggiatura:</strong> Federico Tallone
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+                        <strong>Regia & Sceneggiatura:</strong> Federico Tallone<br>
+                        <strong>Cast:</strong> Riccardo Martone, Aurora Di Modugno, Christian Carere
                     </p>
                     <div class="project-awards">
                         🏆 <strong>Miglior Sceneggiatura</strong> (Federico Tallone)<br>
@@ -371,7 +441,6 @@
                 </div>
             </div>
 
-            <!-- Mimosa -->
             <div class="project-card">
                 <div>
                     <div class="project-tag">Collaborazione CSC</div>
@@ -387,19 +456,20 @@
                 </div>
             </div>
 
-            <!-- Pecunia -->
             <div class="project-card">
                 <div>
                     <div class="project-tag">Produzione Ufficiale</div>
                     <h3 class="project-title">PECUNIA</h3>
                     <div class="project-meta">Produzione: <strong>Giriamola!</strong></div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px;">
+                        <strong>Cast:</strong> Antonio Perna, Manuel Rossi, Dino Galiano, Giovanni Crozza
+                    </p>
                     <div class="project-awards">
                         🏆 <strong>Premio Miglior Attore</strong>
                     </div>
                 </div>
             </div>
 
-            <!-- Le Strabilianti Avventure della Polizia di Sangano -->
             <div class="project-card">
                 <div>
                     <div class="project-tag">Produzione Ufficiale</div>
@@ -407,12 +477,10 @@
                     <div class="project-meta">Produzione: <strong>Giriamola!</strong></div>
                 </div>
             </div>
-
         </div>
 
-        <!-- Sezione Social -->
         <h3 class="category-header">FORMAT & CONTENUTI DIGITALI</h3>
-        <div class="grid-1">
+        <div>
             <div class="project-card" style="border-left: 4px solid var(--fuchsia);">
                 <div>
                     <div class="project-tag">Instagram & Social Network</div>
@@ -425,7 +493,7 @@
         </div>
     </section>
 
-    <!-- Visione Section -->
+    <!-- SEZIONE VISIONE -->
     <section id="vision">
         <h2 class="section-title">Metodo & Produzione</h2>
         <p class="section-subtitle">Dall'ideazione drammaturgica alla copia campione.</p>
@@ -442,7 +510,7 @@
         </div>
     </section>
 
-    <!-- Laboratorio Section -->
+    <!-- SEZIONE LABORATORIO -->
     <section id="laboratorio" style="background-color: rgba(255,0,127,0.02);">
         <h2 class="section-title">IL LABORATORIO</h2>
         <p class="section-subtitle">La fucina creativa alla base del nostro modello di lavoro.</p>
@@ -450,19 +518,18 @@
         <div class="manifesto-box">
             <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.4rem;">GIRIAMOLA! LAB</h3>
             <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
-                La palestra attoriale è il centro di ricerca drammaturgica. Creiamo testi attraverso la drammaturgia attiva. È il motore silenzioso da cui nascono le storie di alcune delle nostre produzioni.
+                La palestra attoriale e il centro di ricerca drammaturgica dove formiamo volti nuovi per il cinema e sperimentiamo i testi attraverso l'Analisi Attiva prima della messa in macchina. È il motore silenzioso da cui nascono le storie e i talenti di tutte le nostre produzioni.
             </p>
         </div>
     </section>
 
-    <!-- Contatti Section -->
+    <!-- SEZIONE CONTATTI -->
     <section id="contatti" style="text-align: center;">
         <h2 class="section-title" style="justify-content: center;">COLLABORA CON NOI</h2>
         <p class="section-subtitle" style="max-width: 650px; margin: 0 auto 35px auto;">Sei una casa di produzione, un distributore o un partner istituzionale? Sviluppiamo e produciamo progetti audiovisivi per il mercato contemporaneo.</p>
         <a href="mailto:info@giriamola.it" class="btn">Contatta il Nucleo</a>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p><strong>GIRIAMOLA!</strong> — Sviluppo e Produzione Cinematografica</p>
         <p style="margin-top: 10px; opacity: 0.5;">In collaborazione con Zorya Produzioni</p>
