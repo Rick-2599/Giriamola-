@@ -1,590 +1,354 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIRIAMOLA! | Sviluppo e Produzione Cinematografica</title>
-    <meta name="description" content="GIRIAMOLA! - Hub di sviluppo e produzione cinematografica indipendente.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0a0a0c;
-            --card-bg: #121216;
-            --fuchsia: #ff33ac;
-            --fuchsia-glow: rgba(255, 51, 172, 0.25);
-            --text-color: #ffffff;
-            --text-muted: #b0b3c1;
-            --border-color: #22222a;
-            --font-main: 'Montserrat', sans-serif;
-            --font-heading: 'Space Grotesk', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIRIAMOLA! | Collettivo Cinematografico Indipendente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0c;
+      --bg-card: #121216;
+      --accent: #ff3366;
+      --accent-glow: rgba(255, 51, 102, 0.25);
+      --text-main: #f3f3f6;
+      --text-muted: #a0a0b0;
+      --border: rgba(255, 255, 255, 0.08);
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: var(--font-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    /* Header e Navigazione */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 12, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
 
-        a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 12, 0.92);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
 
-        .logo img {
-            height: 44px;
-            width: auto;
-            display: block;
-            filter: drop-shadow(0 0 8px var(--fuchsia-glow));
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-        nav {
-            display: flex;
-            gap: 25px;
-        }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-        nav a {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-        }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-        nav a:hover {
-            color: var(--fuchsia);
-            text-shadow: 0 0 8px var(--fuchsia-glow);
-        }
+    /* Sezioni Generali */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        /* Hero */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 140px 5% 60px;
-            background: radial-gradient(circle at 50% 30%, var(--fuchsia-glow) 0%, rgba(10, 10, 12, 1) 70%);
-        }
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 8rem;
+    }
 
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 4rem);
-            margin-bottom: 20px;
-            color: var(--text-color);
-            text-shadow: 0 0 20px var(--fuchsia-glow);
-            max-width: 900px;
-        }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 35px;
-        }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-bottom: 2.5rem;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background-color: var(--fuchsia);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            border-radius: 4px;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px var(--fuchsia-glow);
-            transition: all 0.3s ease;
-        }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
 
-        .btn:hover {
-            background-color: #e62d9b;
-            transform: translateY(-2px);
-            box-shadow: 0 0 30px rgba(255, 51, 172, 0.4);
-        }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+    }
 
-        /* Sections General */
-        section {
-            padding: 90px 8%;
-            border-bottom: 1px solid var(--border-color);
-        }
+    /* Griglia Progetti */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
 
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
 
-        .section-title::before {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 24px;
-            background-color: var(--fuchsia);
-            border-radius: 2px;
-        }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
 
-        .section-subtitle {
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            font-size: 1rem;
-            max-width: 700px;
-        }
+    .project-poster {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      background-color: #000;
+    }
 
-        .category-header {
-            font-size: 1.2rem;
-            margin: 40px 0 20px;
-            color: var(--fuchsia);
-            letter-spacing: 2px;
-        }
+    /* Eccezione per la locandina di Oscar */
+    .project-poster.oscar-poster {
+      object-fit: contain;
+    }
 
-        /* Grids & Cards */
-        .grid-1 { display: grid; grid-template-columns: 1fr; gap: 25px; }
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+    .project-details {
+      padding: 1.5rem;
+    }
 
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
+    .project-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--fuchsia);
-            box-shadow: 0 5px 25px rgba(255, 51, 172, 0.1);
-        }
+    .project-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .team-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+    /* Nucleo / Chi Siamo */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
 
-        .team-card:hover {
-            border-color: var(--fuchsia);
-            transform: translateY(-4px);
-        }
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: 12px;
+    }
 
-        .team-photo-placeholder {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: #1a1a22;
-            border: 2px dashed var(--fuchsia);
-            margin: 0 auto 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-        }
+    .team-name {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      margin-bottom: 0.2rem;
+    }
 
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            display: flex;
-            gap: 20px;
-        }
+    .team-role {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
 
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--fuchsia);
-            box-shadow: 0 5px 25px rgba(255, 51, 172, 0.1);
-        }
-
-        .project-poster {
-            width: 120px;
-            flex-shrink: 0;
-            aspect-ratio: 2 / 3;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .project-poster--placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.03);
-            border: 1px dashed var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .project-tag {
-            display: inline-block;
-            background-color: rgba(255, 51, 172, 0.15);
-            color: var(--fuchsia);
-            border: 1px solid var(--fuchsia);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-
-        .card-link {
-            display: block;
-            color: inherit;
-            cursor: pointer;
-        }
-
-        .card-link .card-cta {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--fuchsia);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s ease;
-        }
-
-        .card-link:hover .card-cta {
-            transform: translateX(6px);
-        }
-
-        .manifesto-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 35px;
-            border-radius: 8px;
-        }
-
-        .partner-card {
-            border-left: 4px solid var(--fuchsia);
-            padding: 30px;
-            border-radius: 4px;
-        }
-
-        .partner-tag {
-            color: var(--fuchsia);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .partner-name {
-            font-size: 1.6rem;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-
-        .contact-box {
-            margin-top: 20px;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            border: 1px solid var(--fuchsia);
-            border-radius: 8px;
-            background: linear-gradient(135deg, rgba(255, 51, 172, 0.12) 0%, rgba(18, 18, 22, 1) 70%);
-            box-shadow: 0 0 30px rgba(255, 51, 172, 0.08);
-        }
-
-        .contact-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            padding: 40px 8%;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            background-color: #050507;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            nav { display: none; }
-            .project-card { flex-direction: column; }
-            .project-poster { width: 100%; max-width: 200px; }
-            section { padding: 60px 5%; }
-            .contact-box { flex-direction: column; align-items: flex-start; padding: 25px; }
-        }
-    </style>
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header>
-        <a href="#" class="logo"><img src="logo-giriamola.png" alt="GIRIAMOLA!"></a>
-        <nav>
-            <a href="#chi-siamo">Chi Siamo</a>
-            <a href="#progetti">Progetti</a>
-            <a href="#vision">Visione</a>
-            <a href="#laboratorio">Laboratorio</a>
-            <a href="#collaborazioni">Collaborazioni</a>
-            <a href="#contatti">Contatti</a>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#" class="logo">
+        <img src="GIRIAMOLA.png" alt="Giriamola! Logo" onerror="this.style.display='none'">
+        GIRIAMOLA!
+      </a>
+      <ul class="nav-links">
+        <li><a href="#chi-siamo">CHI SIAMO</a></li>
+        <li><a href="#progetti">PROGETTI</a></li>
+        <li><a href="#visione">VISIONE</a></li>
+        <li><a href="#laboratorio">LABORATORIO</a></li>
+        <li><a href="#collaborazioni">COLLABORAZIONI</a></li>
+        <li><a href="#contatti">CONTATTI</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>IL FENICOTTERO È L'UNICA COSA CHE CONTA.</h1>
-        <p>Hub di sviluppo e produzione cinematografica indipendente. Raccontiamo storie.</p>
-        <a href="#progetti" class="btn">Esplora i Progetti</a>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Creiamo cinema indipendente, insieme.</h1>
+    <p>Giriamola! è un collettivo cinematografico indipendente nato per sviluppare, produrre e valorizzare storie originali attraverso la collaborazione e la condivisione di risorse.</p>
+  </section>
 
-    <!-- Sezione Chi Siamo -->
-    <section id="chi-siamo">
-        <h2 class="section-title">Chi Siamo</h2>
-        <p class="section-subtitle">Il collettivo, la visione e le persone dietro le nostre produzioni.</p>
-        
-        <div class="manifesto-box" style="margin-bottom: 40px;">
-            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">
-                <strong style="color: #ffffff;">Giriamola!</strong> è una produzione indipendente che prende vita dall’incontro tra registi, autori e attori legati da una forte affinità artistica, maturata anche attraverso l'esperienza condivisa al <strong style="color: #ffffff;">Centro Sperimentale di Cinematografia</strong>.
-            </p>
-            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">
-                L'architettura del gruppo nasce da un'intuizione di <strong style="color: #ffffff;">Riccardo Martone</strong>, che individua la forza del collettivo e la giusta alchimia tra i talenti: è lui a selezionare e far incontrare i professionisti più adatti per ogni singolo progetto, valorizzando l'unione tra las visioni dei due registi principali, <strong style="color: #ffffff;">Federico Tallone</strong> e <strong style="color: #ffffff;">Lorenzo Lancellotti</strong>.
-            </p>
-            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px;">
-                Un ecosistema che unisce competenze diverse e complementari:
-            </p>
-            <ul style="color: var(--text-muted); margin-left: 20px; font-size: 1rem; line-height: 1.8; margin-bottom: 15px;">
-                <li style="margin-bottom: 8px;"><strong style="color: #ffffff;">Federico Tallone</strong> ha sviluppato negli anni un'importante esperienza sul campo, lavorando su numerosi set — sia indipendenti che industriali — e nella realizzazione di reportage.</li>
-                <li><strong style="color: #ffffff;">Riccardo Martone</strong> e <strong style="color: #ffffff;">Lorenzo Lancellotti</strong> si sono diplomati al Centro Sperimentale di Cinematografia, costruendo un percorso focalizzato sulla drammaturgia attiva e sulla direzione degli attori.</li>
-            </ul>
-            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-                Attorno a loro si è consolidato un gruppo affiatato di interpreti tra cui <strong style="color: #ffffff;">Leonardo Cappelli</strong>, <strong style="color: #ffffff;">Aurora Di Modugno</strong>, <strong style="color: #ffffff;">Nicola Brando Parini</strong> e <strong style="color: #ffffff;">Manuel Rossi</strong>.
-            </p>
+  <!-- Progetti -->
+  <section id="progetti">
+    <h2 class="section-title">PROGETTI</h2>
+    <div class="projects-grid">
+
+      <!-- Oscar -->
+      <div class="project-card">
+        <img class="project-poster oscar-poster" src="oscar-copertina.jpg" alt="Locandina di OSCAR" loading="lazy">
+        <div class="project-details">
+          <div class="project-tag">In Uscita</div>
+          <h3 class="project-title">OSCAR</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Zorya Produzioni<br>
+          <strong>Regia:</strong> Federico Tallone<br>
+          <strong>Cast:</strong> Riccardo Martone, Leonardo Cappelli, Chiara Bono</p>
         </div>
+      </div>
 
-        <h3 class="category-header">IL NUCLEO</h3>
-        <div class="grid-3">
-            <div class="team-card">
-                <div class="team-photo-placeholder">[Foto]</div>
-                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 5px;">Riccardo Martone</h3>
-                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Sviluppo Progetti & Coordinamento</p>
-                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
-            </div>
-
-            <div class="team-card">
-                <div class="team-photo-placeholder">[Foto]</div>
-                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 5px;">Federico Tallone</h3>
-                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Regia & Sceneggiatura</p>
-                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
-            </div>
-
-            <div class="team-card">
-                <div class="team-photo-placeholder">[Foto]</div>
-                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 5px;">Lorenzo Lancellotti</h3>
-                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Regia & Produzione</p>
-                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
-            </div>
+      <!-- Porcate -->
+      <div class="project-card">
+        <div class="project-poster" style="display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.85rem; border-bottom: 1px solid var(--border);">COPERTINA IN ARRIVO</div>
+        <div class="project-details">
+          <div class="project-tag">In Sviluppo</div>
+          <h3 class="project-title">PORCATE!</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Zorya Produzioni × Giriamola!<br>
+          Lungometraggio in fase di sviluppo avanzato e rifinitura drammaturgica.</p>
         </div>
-    </section>
+      </div>
 
-    <!-- Progetti Section -->
-    <section id="progetti">
-        <h2 class="section-title">Progetti</h2>
-        <p class="section-subtitle">Il nostro catalogo di produzioni e opere in fase di sviluppo, produzione e distribuzione.</p>
-
-        <div class="grid-2">
-            
-           <!-- Oscar -->
-        <div class="project-card">
-          <img class="project-poster" src="oscar-copertina.jpg" alt="Locandina di OSCAR" style="object-fit: contain; background-color: #000;" loading="lazy">
-          <div>
-            <div class="project-tag">In Uscita</div>
-            <h3 class="project-title">OSCAR</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Zorya Produzioni<br>
-            <strong>Regia:</strong> Federico Tallone<br>
-            <strong>Cast:</strong> Riccardo Martone, Leonardo Cappelli, Chiara Bono</p>
-          </div>
+      <!-- Tu mi piaci, ma non corriamo -->
+      <div class="project-card">
+        <div class="project-poster" style="display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.85rem; border-bottom: 1px solid var(--border);">COPERTINA IN ARRIVO</div>
+        <div class="project-details">
+          <div class="project-tag">Premiato</div>
+          <h3 class="project-title">TU MI PIACI, MA NON CORRIAMO</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Regia & Sceneggiatura:</strong> Federico Tallone<br>
+          🏆 Miglior Sceneggiatura, Miglior Attore, Menzione Rai Cinema.</p>
         </div>
+      </div>
 
-            <!-- Porcate! -->
-            <div class="project-card">
-                <div class="project-poster project-poster--placeholder" aria-hidden="true">Copertina<br>in arrivo</div>
-                <div>
-                    <div class="project-tag">In Sviluppo</div>
-                    <h3 class="project-title">PORCATE!</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Zorya Produzioni × Giriamola!<br>Lungometraggio in fase di sviluppo avanzato e rifinitura drammaturgica.</p>
-                </div>
-            </div>
-
-            <!-- Tu Mi Piaci, Ma Non Corriamo -->
-            <div class="project-card">
-                <div class="project-poster project-poster--placeholder" aria-hidden="true">Copertina<br>in arrivo</div>
-                <div>
-                    <div class="project-tag">Premiato</div>
-                    <h3 class="project-title">TU MI PIACI, MA NON CORRIAMO</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Regia & Sceneggiatura:</strong> Federico Tallone<br>🏆 Miglior Sceneggiatura, Miglior Attore, Menzione Rai Cinema.</p>
-                </div>
-            </div>
-
-            <!-- Mimosa -->
-        <div class="project-card">
-          <img class="project-poster" src="mimosa-copertina.jpeg" alt="Locandina di MIMOSA" loading="lazy">
-          <div>
-            <div class="project-tag">Collaborazione CSC</div>
-            <h3 class="project-title">MIMOSA</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Regia:</strong> Lorenzo Lancellotti<br>🏆 Premio del Pubblico (Condorello Cinema Troisi).</p>
-          </div>
+      <!-- Mimosa -->
+      <div class="project-card">
+        <img class="project-poster" src="mimosa-copertina.jpeg" alt="Locandina di MIMOSA" loading="lazy">
+        <div class="project-details">
+          <div class="project-tag">Collaborazione CSC</div>
+          <h3 class="project-title">MIMOSA</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Regia:</strong> Lorenzo Lancellotti<br>
+          🏆 Premio del Pubblico (Condorello Cinema Troisi).</p>
         </div>
+      </div>
 
-            <!-- Pecunia -->
-        <div class="project-card">
-          <img class="project-poster" src="pecunia-copertina.jpeg" alt="Locandina di PECUNIA" loading="lazy">
-          <div>
-            <div class="project-tag">Produzione Ufficiale</div>
-            <h3 class="project-title">PECUNIA</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Giriamola!<br>🏆 Premio Miglior Attore.</p>
-          </div>
+      <!-- Pecunia -->
+      <div class="project-card">
+        <img class="project-poster" src="pecunia-copertina.jpeg" alt="Locandina di PECUNIA" loading="lazy">
+        <div class="project-details">
+          <div class="project-tag">Produzione Ufficiale</div>
+          <h3 class="project-title">PECUNIA</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Giriamola!<br>
+          🏆 Premio Miglior Attore.</p>
         </div>
+      </div>
 
-            <!-- Le Strabilianti Avventure della Polizia di Sangano -->
-            <div class="project-card">
-                <div class="project-poster project-poster--placeholder" aria-hidden="true">Copertina<br>in arrivo</div>
-                <div>
-                    <div class="project-tag">Produzione Ufficiale</div>
-                    <h3 class="project-title">LE STRABILIANTI AVVENTURE DELLA POLIZIA DI SANGANO</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Format brillante e irriverente ad alto contenuto comico.</p>
-                </div>
-            </div>
-
+      <!-- Le Strabilianti Avventure -->
+      <div class="project-card">
+        <div class="project-poster" style="display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 0.85rem; border-bottom: 1px solid var(--border);">COPERTINA IN ARRIVO</div>
+        <div class="project-details">
+          <div class="project-tag">Produzione Ufficiale</div>
+          <h3 class="project-title">LE STRABILIANTI AVVENTURE DELLA POLIZIA DI SANGANO</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Format brillante e irriverente ad alto contenuto comico.</p>
         </div>
+      </div>
 
-        <h3 class="category-header">FORMAT & CONTENUTI DIGITALI</h3>
-        <div class="grid-1">
-            <a href="https://www.instagram.com/giriamola.sdp/?hl=it" target="_blank" rel="noopener noreferrer" class="project-card card-link" style="border-left: 4px solid var(--fuchsia);">
-                <div>
-                    <div class="project-tag">Instagram & Social Network</div>
-                    <h3 class="project-title">GIRIAMOLA! SHORT</h3>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 5px;">
-                        Il nostro canale Instagram per contenuti di intrattenimento, format brevi e promozione dei nostri talenti.
-                    </p>
-                    <span class="card-cta">Seguici su Instagram @giriamola.sdp <span aria-hidden="true">↗</span></span>
-                </div>
-            </a>
-        </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Visione Section -->
-    <section id="vision">
-        <h2 class="section-title">VISIONE</h2>
-        <p class="section-subtitle">Come lavoriamo e dove vogliamo portare il nostro cinema.</p>
-        
-        <div class="grid-2">
-            <div class="card">
-                <h3 style="color: var(--fuchsia); margin-bottom: 15px;">DALL'OPERA AL SET</h3>
-                <p style="color: var(--text-muted);">Proponiamo al mercato cinematografico pacchetti integrati ad alto valore di sviluppo: sceneggiature solide nate da un lavoro continuo di analisi attiva, un cast affiatato e una struttura esecutiva pronta per l'accesso ai finanziamenti pubblici e al tax credit.</p>
-            </div>
-            
-            <a href="manifesto.html" class="card card-link">
-                <h3 style="color: var(--fuchsia); margin-bottom: 15px;">IL MANIFESTO</h3>
-                <p style="color: var(--text-muted);">Fare serve per scoprire se hai pensato bene, non per applicare ciò a cui hai pensato. Gioca con la stessa serietà dei bambini. Sii artigiano, non artista. Ciò che conta è l'opera nella sua totalità.</p>
-                <span class="card-cta">Leggi il manifesto <span aria-hidden="true">→</span></span>
-            </a>
-        </div>
-    </section>
+  <!-- Chi Siamo -->
+  <section id="chi-siamo">
+    <h2 class="section-title">CHI SIAMO</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <h3 class="team-name">Riccardo Martone</h3>
+        <div class="team-role">Fondata & Fondatore / Regia / Produzione</div>
+      </div>
+      <div class="team-card">
+        <h3 class="team-name">Federico Tallone</h3>
+        <div class="team-role">Regia / Sceneggiatura</div>
+      </div>
+      <div class="team-card">
+        <h3 class="team-name">Lorenzo Lancellotti</h3>
+        <div class="team-role">Regia / Fotografia</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Laboratorio Section -->
-    <section id="laboratorio" style="background-color: rgba(255,0,127,0.02);">
-        <h2 class="section-title">IL LABORATORIO</h2>
-        <p class="section-subtitle">La fucina creativa alla base del nostro modello di lavoro.</p>
-        
-        <div class="manifesto-box">
-            <h3 style="color: #ffffff; margin-bottom: 15px; font-size: 1.4rem;">GIRIAMOLA! LAB</h3>
-            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
-                La palestra attoriale è il centro di ricerca drammaturgica. Creiamo testi attraverso la drammaturgia attiva. È il motore silenzioso da cui nascono le storie di alcune delle nostre produzioni.
-            </p>
-        </div>
-    </section>
-
-    <!-- Collaborazioni Section -->
-    <section id="collaborazioni">
-        <h2 class="section-title">COLLABORAZIONI</h2>
-        <p class="section-subtitle">Le realtà con cui sviluppiamo e produciamo le nostre opere.</p>
-
-        <div class="grid-2">
-            <div class="card partner-card">
-                <div class="partner-tag">Partner di Produzione</div>
-                <h3 class="partner-name">ZORYA PRODUZIONI</h3>
-                <p style="color: var(--text-muted);">Casa di produzione con cui condividiamo lo sviluppo e la realizzazione di lungometraggi e cortometraggi, da <strong style="color: #ffffff;">OSCAR</strong> a <strong style="color: #ffffff;">PORCATE!</strong>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contatti Section -->
-    <section id="contatti">
-        <div class="contact-box">
-            <div>
-                <h3 class="contact-title">COLLABORA CON NOI</h3>
-                <p>Sei una casa di produzione, un distributore o un partner istituzionale? Sviluppiamo e produciamo progetti audiovisivi per il mercato contemporaneo.</p>
-            </div>
-            <a href="mailto:info@giriamola.it" class="btn">Contatta il Nucleo</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© GIRIAMOLA! — Sviluppo e Produzione Cinematografica</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; Giriamola! Collettivo Cinematografico Indipendente. Tutti i diritti riservati.</p>
+  </footer>
 
 </body>
 </html>
