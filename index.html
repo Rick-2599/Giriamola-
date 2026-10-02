@@ -85,6 +85,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -198,29 +199,16 @@
         .team-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 30px;
+            padding: 25px;
             border-radius: 8px;
-            text-align: center;
+            text-align: left;
             transition: all 0.3s ease;
         }
 
         .team-card:hover {
             border-color: var(--fuchsia);
             transform: translateY(-4px);
-        }
-
-        .team-photo-placeholder {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: #1a1a22;
-            border: 2px dashed var(--fuchsia);
-            margin: 0 auto 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.8rem;
+            box-shadow: 0 5px 20px rgba(255, 51, 172, 0.15);
         }
 
         .project-card {
@@ -373,7 +361,7 @@
     <header>
         <a href="#" class="logo"><img src="logo-giriamola.png" alt="GIRIAMOLA!"></a>
         <nav>
-            <a href="#chi-siamo">Chi Siamo</a>
+            <a onclick="openChiSiamo()">Chi Siamo</a>
             <a href="#progetti">Progetti</a>
             <a href="#vision">Visione</a>
             <a href="#laboratorio">Laboratorio</a>
@@ -389,77 +377,6 @@
         <a href="#progetti" class="btn">Esplora i Progetti</a>
     </section>
 
-    <!-- Chi Siamo -->
-  <section id="chi-siamo">
-    <h2 class="section-title">CHI SIAMO</h2>
-    
-    <!-- Testo Introduttivo / Manifesto -->
-    <div style="max-width: 800px; margin-bottom: 3.5rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
-      <p style="margin-bottom: 1.2rem;">
-        <strong style="color: var(--text-main);">Giriamola!</strong> nasce dalla sinergia tra <strong>Giriamola!</strong> e <strong>Zorya Produzioni</strong>, due realtà indipendenti nate dall'iniziativa di giovani autori e maestranze del cinema.
-      </p>
-      <p style="margin-bottom: 1.2rem;">
-        <strong style="color: var(--text-main);">Riccardo Martone</strong> unisce le forze dei due nuclei creativi — intrecciando la visione autoriale di <strong>Federico Tallone</strong> (<em>Zorya Produzioni</em>) con la ricerca visiva e cinematografica di <strong>Lorenzo Lancellotti</strong> (<em>Giriamola!</em>) — per trasformare due percorsi autonomi in un unico polo produttivo.
-      </p>
-      <p>
-        L'obiettivo è creare uno <strong>spazio di lavoro condiviso</strong> capace di sviluppare, produrre e valorizzare storie attraverso il lavoro della <em>drammaturgia attiva</em>. Qualità artistica, ricerca sui linguaggi e cooperazione sono il motore di <em>Giriamola!</em>: un ecosistema dove il talento individuale diventa forza collettiva.
-      </p>
-    </div>
-
-    <!-- Griglia Membri Stile Carte -->
-    <div class="team-grid">
-      <div class="team-card">
-        <h3 class="team-name">Riccardo Martone</h3>
-        <div class="team-role">Produzione / Sviluppo</div>
-      </div>
-      <div class="team-card">
-        <h3 class="team-name">Federico Tallone</h3>
-        <div class="team-role">Regia / Sceneggiatura</div>
-      </div>
-      <div class="team-card">
-        <h3 class="team-name">Lorenzo Lancellotti</h3>
-        <div class="team-role">Regia / Fotografia</div>
-      </div>
-      <div class="team-card">
-        <h3 class="team-name">Leonardo Cappelli</h3>
-        <div class="team-role">Nucleo Creativo</div>
-      </div>
-      <div class="team-card">
-        <h3 class="team-name">Aurora Di Modugno</h3>
-        <div class="team-role">Nucleo Creativo</div>
-      </div>
-      <div class="team-card">
-        <h3 class="team-name">Brando Parini</h3>
-        <div class="team-role">Nucleo Creativo</div>
-      </div>
-    </div>
-  </section>
-
-        <h3 class="category-header">IL NUCLEO</h3>
-        <div class="grid-3">
-            <div class="team-card">
-                <div class="team-photo-placeholder">[Foto]</div>
-                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 5px;">Riccardo Martone</h3>
-                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Sviluppo Progetti & Coordinamento</p>
-                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
-            </div>
-
-            <div class="team-card">
-                <div class="team-photo-placeholder">[Foto]</div>
-                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 5px;">Federico Tallone</h3>
-                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Regia & Sceneggiatura</p>
-                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
-            </div>
-
-            <div class="team-card">
-                <div class="team-photo-placeholder">[Foto]</div>
-                <h3 style="color: #ffffff; font-size: 1.2rem; margin-bottom: 5px;">Lorenzo Lancellotti</h3>
-                <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700; margin-bottom: 15px;">Regia & Produzione</p>
-                <a href="#" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">Curriculum Vitae</a>
-            </div>
-        </div>
-    </section>
-
     <!-- Progetti Section -->
     <section id="progetti">
         <h2 class="section-title">Progetti</h2>
@@ -469,7 +386,7 @@
             
            <!-- Oscar -->
         <div class="project-card">
-          <img class="project-poster" src="oscar-copertina.jpg" alt="Locandina di OSCAR" style="object-fit: contain; background-color: #000;" loading="lazy">
+          <img class="project-poster" src="oscar-copertina.jpeg" alt="Locandina di OSCAR" style="object-fit: contain; background-color: #000;" loading="lazy">
           <div>
             <div class="project-tag">In Uscita</div>
             <h3 class="project-title">OSCAR</h3>
@@ -511,7 +428,7 @@
 
             <!-- Pecunia -->
             <div class="project-card">
-            <img class="project-poster" src="mimosa-copertina.jpeg" alt="Locandina di MIMOSA" loading="lazy">
+            <img class="project-poster" src="pecunia-copertina.jpeg" alt="Locandina di PECUNIA" loading="lazy">
                 <div>
                     <div class="project-tag">Produzione Ufficiale</div>
                     <h3 class="project-title">PECUNIA</h3>
@@ -607,6 +524,78 @@
     <footer>
         <p>© GIRIAMOLA! — Sviluppo e Produzione Cinematografica</p>
     </footer>
+
+    <!-- MODALE CHI SIAMO (Apertura Stile Groenlandia) -->
+    <div id="modal-chi-siamo" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 12, 0.96); backdrop-filter: blur(12px); z-index: 2000; overflow-y: auto; padding: 4rem 1.5rem;">
+        <div style="max-width: 900px; margin: 0 auto; position: relative; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem 2.5rem;">
+            
+            <!-- Pulsante Chiudi -->
+            <button onclick="closeChiSiamo()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-muted); font-size: 2rem; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='var(--fuchsia)'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
+            
+            <h2 class="section-title" style="margin-bottom: 20px;">CHI SIAMO</h2>
+            
+            <!-- Manifesto / Testo Narrativo -->
+            <div style="margin-bottom: 3.5rem; color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+                <p style="margin-bottom: 1.2rem;">
+                    <strong style="color: var(--text-color);">Giriamola!</strong> nasce dalla sinergia tra <strong>Giriamola!</strong> e <strong>Zorya Produzioni</strong>, due realtà indipendenti nate dall'iniziativa di giovani autori e maestranze del cinema.
+                </p>
+                <p style="margin-bottom: 1.2rem;">
+                    <strong style="color: var(--text-color);">Riccardo Martone</strong> unisce le forze dei due nuclei creativi — intrecciando la visione autoriale di <strong>Federico Tallone</strong> (<em>Zorya Produzioni</em>) con la ricerca visiva e cinematografica di <strong>Lorenzo Lancellotti</strong> (<em>Giriamola!</em>) — per trasformare due percorsi autonomi in un unico polo produttivo.
+                </p>
+                <p>
+                    L'obiettivo è creare uno <strong>spazio di lavoro condiviso</strong> capace di sviluppare, produrre e valorizzare storie attraverso il lavoro della <em>drammaturgia attiva</em>. Qualità artistica, ricerca sui linguaggi e cooperazione sono il motore di <em>Giriamola!</em>: un ecosistema dove il talento individuale diventa forza collettiva.
+                </p>
+            </div>
+
+            <h3 class="category-header" style="margin-bottom: 25px;">MEMBRI</h3>
+
+            <!-- Carte Membri -->
+            <div class="grid-3">
+                <div class="team-card">
+                    <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 6px;">Riccardo Martone</h3>
+                    <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700;">Attore / Produttore Creativo / Coordinatore</p>
+                </div>
+                <div class="team-card">
+                    <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 6px;">Federico Tallone</h3>
+                    <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700;">Autore / Regista / Sceneggiatore / Organizzatore Generale</p>
+                </div>
+                <div class="team-card">
+                    <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 6px;">Lorenzo Lancellotti</h3>
+                    <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700;">Regista / Attore</p>
+                </div>
+                <div class="team-card">
+                    <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 6px;">Leonardo Cappelli</h3>
+                    <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700;">Attore / Costumista</p>
+                </div>
+                <div class="team-card">
+                    <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 6px;">Aurora Di Modugno</h3>
+                    <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700;">Attrice</p>
+                </div>
+                <div class="team-card">
+                    <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 6px;">Nicola Brando Parini</h3>
+                    <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700;">Attore</p>
+                </div>
+                <div class="team-card">
+                    <h3 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 6px;">Leonardo Pietrini</h3>
+                    <p style="color: var(--fuchsia); font-size: 0.85rem; font-weight: 700;">Attore</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script Gestione Modale -->
+    <script>
+        function openChiSiamo() {
+            document.getElementById('modal-chi-siamo').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeChiSiamo() {
+            document.getElementById('modal-chi-siamo').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 
 </body>
 </html>
