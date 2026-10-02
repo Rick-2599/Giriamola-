@@ -751,5 +751,45 @@ function openVideoModal() {
             modal.style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+    <!-- MODALE MANIFESTO -->
+    <div id="modal-manifesto" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 12, 0.96); backdrop-filter: blur(12px); z-index: 2000; overflow-y: auto; padding: 4rem 1.5rem;">
+        <div style="max-width: 850px; margin: 0 auto; position: relative; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem 2.5rem;">
+            
+            <!-- Pulsante Chiudi -->
+            <button onclick="closeManifesto()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-muted); font-size: 2rem; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='var(--fuchsia)'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
+            
+            <h2 class="section-title" style="margin-bottom: 25px;">IL MANIFESTO DI GIRIAMOLA!</h2>
+            
+            <div style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.8;">
+                <p style="margin-bottom: 1.2rem; color: #ffffff; font-weight: 600; font-size: 1.1rem; border-left: 3px solid var(--fuchsia); padding-left: 15px;">
+                    "Fare serve per scoprire se hai pensato bene, non per applicare ciò a cui hai pensato."
+                </p>
+
+                <p style="margin-bottom: 1rem;">
+                    1. <strong>L'Opera è al centro.</strong> L'ego del singolo cede il passo al valore del racconto. Ogni scelta drammaturgica, visiva o produttiva deve servire unicamente l'armonia dell'opera nella sua totalità.
+                </p>
+
+                <p style="margin-bottom: 1rem;">
+                    2. <strong>Gioca con la stessa serietà dei bambini.</strong> Il lavoro di creazione richiede totale dedizione, rigore e un approccio libero da schemi preordinati. Il gioco è una cosa seria.
+                </p>
+
+                <p style="margin-bottom: 1rem;">
+                    3. <strong>Sii artigiano, non artista.</strong> Il cinema è maestria, mestiere e prova pratica. La teoria senza la pratica del set e della scena rimane astrazione.
+                </p>
+
+                <p style="margin-bottom: 1rem;">
+                    4. <strong>Drammaturgia attiva.</strong> Le storie non nascono solo sulla carta, ma prendono forma attraverso la ricerca, la palestra attoriale, la verifica continua sul campo e il confronto diretto con gli interpreti.
+                </p>
+
+                <p style="margin-bottom: 1rem;">
+                    5. <strong>Autonomia e Sinergia.</strong> Essere indipendenti significa avere la libertà di creare senza compromessi, costruendo alleanze solide con chi condivide la stessa visione produttiva e artistica.
+                </p>
+            </div>
+
+            <div style="margin-top: 2.5rem; text-align: right;">
+                <button onclick="closeManifesto()" class="btn" style="padding: 10px 24px;">Chiudi</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
