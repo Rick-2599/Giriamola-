@@ -735,22 +735,9 @@ header {
             document.body.style.overflow = 'auto';
         }
     </script>
-function openVideoModal() {
-            var modal = document.getElementById('modal-video');
-            var iframe = document.getElementById('hero-iframe');
-            // Inserisci qui l'URL del video di presentazione/showreel (es. vimeo o youtube embed)
-            iframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"; 
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+    
         }
-
-        function closeVideoModal() {
-            var modal = document.getElementById('modal-video');
-            var iframe = document.getElementById('hero-iframe');
-            iframe.src = ""; // Stoppa la riproduzione del video quando si chiude
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
+    
     <!-- MODALE MANIFESTO -->
     <div id="modal-manifesto" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 12, 0.96); backdrop-filter: blur(12px); z-index: 2000; overflow-y: auto; padding: 4rem 1.5rem;">
         <div style="max-width: 850px; margin: 0 auto; position: relative; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem 2.5rem;">
@@ -791,5 +778,45 @@ function openVideoModal() {
             </div>
         </div>
     </div>
+
+    <!-- SCRIPT JS (Tutte le funzioni vanno dentro questo unico blocco) -->
+    <script>
+        function openChiSiamo() {
+            document.getElementById('modal-chi-siamo').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeChiSiamo() {
+            document.getElementById('modal-chi-siamo').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openManifesto() {
+            document.getElementById('modal-manifesto').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeManifesto() {
+            document.getElementById('modal-manifesto').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openVideoModal() {
+            var modal = document.getElementById('modal-video');
+            var iframe = document.getElementById('hero-iframe');
+            if (iframe) iframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+            if (modal) modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideoModal() {
+            var modal = document.getElementById('modal-video');
+            var iframe = document.getElementById('hero-iframe');
+            if (iframe) iframe.src = "";
+            if (modal) modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
 </body>
 </html>
