@@ -891,6 +891,61 @@ header {
             document.body.style.overflow = 'auto';
         }
     </script>
+<!-- MODALE TUTTI I MEMBRI -->
+    <div id="modal-all-members" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 12, 0.96); backdrop-filter: blur(12px); z-index: 2000; overflow-y: auto; padding: 4rem 1.5rem;">
+        <div style="max-width: 1100px; margin: 0 auto; position: relative; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem 2.5rem;">
+            <button onclick="closeAllMembersModal()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-muted); font-size: 2rem; cursor: pointer;">&times;</button>
+            <h2 class="section-title" style="margin-bottom: 25px;">TUTTI I MEMBRI</h2>
+            
+            <div class="grid-3">
+                <div class="card member-card" onclick="openMemberModal('riccardo-martone')">
+                    <div class="member-photo-wrapper"><img src="foto-riccardo.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=RM'"></div>
+                    <h3 class="member-name">RICCARDO MARTONE</h3>
+                    <p class="member-role">Attore / Produttore Creativo / Coordinatore</p>
+                </div>
+                <div class="card member-card" onclick="openMemberModal('federico-tallone')">
+                    <div class="member-photo-wrapper"><img src="foto-federico.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=FT'"></div>
+                    <h3 class="member-name">FEDERICO TALLONE</h3>
+                    <p class="member-role">Autore / Regista / Sceneggiatore / Organizzatore Generale</p>
+                </div>
+                <div class="card member-card" onclick="openMemberModal('lorenzo-lancellotti')">
+                    <div class="member-photo-wrapper"><img src="foto-lorenzo.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LL'"></div>
+                    <h3 class="member-name">LORENZO LANCELLOTTI</h3>
+                    <p class="member-role">Regista / Attore</p>
+                </div>
+                <div class="card member-card" onclick="openMemberModal('leonardo-cappelli')">
+                    <div class="member-photo-wrapper"><img src="foto-leonardo.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LC'"></div>
+                    <h3 class="member-name">LEONARDO CAPPELLI</h3>
+                    <p class="member-role">Attore / Costumista</p>
+                </div>
+                <div class="card member-card" onclick="openMemberModal('aurora-dimodugno')">
+                    <div class="member-photo-wrapper"><img src="foto-aurora.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=AD'"></div>
+                    <h3 class="member-name">AURORA DI MODUGNO</h3>
+                    <p class="member-role">Attrice</p>
+                </div>
+                <div class="card member-card" onclick="openMemberModal('brando-parini')">
+                    <div class="member-photo-wrapper"><img src="foto-brando.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=NP'"></div>
+                    <h3 class="member-name">NICOLA BRANDO PARINI</h3>
+                    <p class="member-role">Attore</p>
+                </div>
+                <div class="card member-card" onclick="openMemberModal('leonardo-pietrini')">
+                    <div class="member-photo-wrapper"><img src="foto-pietrini.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LP'"></div>
+                    <h3 class="member-name">LEONARDO PIETRINI</h3>
+                    <p class="member-role">Attore</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- MODALE SCHEDA SINGOLO MEMBRO -->
+    <div id="modal-member-detail" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 12, 0.96); backdrop-filter: blur(12px); z-index: 3000; overflow-y: auto; padding: 4rem 1.5rem;">
+        <div style="max-width: 650px; margin: 0 auto; position: relative; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 3rem 2.5rem; text-align: center;">
+            <button onclick="closeMemberModal()" style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: var(--text-muted); font-size: 2rem; cursor: pointer;">&times;</button>
+            
+            <div id="member-detail-content">
+                <!-- Il contenuto viene inserito dinamicamente dal Javascript -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
