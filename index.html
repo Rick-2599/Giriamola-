@@ -1004,8 +1004,112 @@ header {
             </div>
         </div>
     </div>
+
+  const membersData = {
+            'riccardo-martone': {
+                name: 'RICCARDO MARTONE',
+                role: 'Attore / Produttore Creativo / Coordinatore',
+                photo: 'foto-riccardo.jpg',
+                cv: 'cv-riccardo.pdf',
+                instagram: 'https://instagram.com/',
+                agency: 'Nome Agenzia / Contatto',
+                showreel: 'https://youtube.com/'
+            },
+            'federico-tallone': {
+                name: 'FEDERICO TALLONE',
+                role: 'Autore / Regista / Sceneggiatore / Organizzatore Generale',
+                photo: 'foto-federico.jpg',
+                cv: 'cv-federico.pdf',
+                instagram: 'https://instagram.com/',
+                agency: 'Nome Agenzia / Contatto',
+                showreel: 'https://vimeo.com/'
+            },
+            'lorenzo-lancellotti': {
+                name: 'LORENZO LANCELLOTTI',
+                role: 'Regista / Attore',
+                photo: 'foto-lorenzo.jpg',
+                cv: 'cv-lorenzo.pdf',
+                instagram: 'https://instagram.com/',
+                agency: 'Nome Agenzia / Contatto',
+                showreel: 'https://vimeo.com/'
+            },
+            'leonardo-cappelli': {
+                name: 'LEONARDO CAPPELLI',
+                role: 'Attore / Costumista',
+                photo: 'foto-leonardo.jpg',
+                cv: '#',
+                instagram: 'https://instagram.com/',
+                agency: 'Contatto Agenzia',
+                showreel: '#'
+            },
+            'aurora-dimodugno': {
+                name: 'AURORA DI MODUGNO',
+                role: 'Attrice',
+                photo: 'foto-aurora.jpg',
+                cv: '#',
+                instagram: 'https://instagram.com/',
+                agency: 'Contatto Agenzia',
+                showreel: '#'
+            },
+            'brando-parini': {
+                name: 'NICOLA BRANDO PARINI',
+                role: 'Attore',
+                photo: 'foto-brando.jpg',
+                cv: '#',
+                instagram: 'https://instagram.com/',
+                agency: 'Contatto Agenzia',
+                showreel: '#'
+            },
+            'leonardo-pietrini': {
+                name: 'LEONARDO PIETRINI',
+                role: 'Attore',
+                photo: 'foto-pietrini.jpg',
+                cv: '#',
+                instagram: 'https://instagram.com/',
+                agency: 'Contatto Agenzia',
+                showreel: '#'
+            }
+        };
+
+        function openAllMembersModal() {
+            document.getElementById('modal-all-members').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAllMembersModal() {
+            document.getElementById('modal-all-members').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openMemberModal(id) {
+            const member = membersData[id];
+            if (!member) return;
+            const content = `
+                <div class="member-photo-wrapper" style="width: 140px; height: 140px; margin: 0 auto 20px;">
+                    <img src="${member.photo}" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=${member.name.charAt(0)}'">
+                </div>
+                <h2 style="color: #fff; font-size: 1.5rem; margin-bottom: 5px;">${member.name}</h2>
+                <p style="color: var(--fuchsia); font-weight: 600; font-size: 0.95rem; margin-bottom: 20px;">${member.role}</p>
+
+                <div class="member-links-grid">
+                    <a href="${member.cv}" target="_blank" class="member-link-btn">📄 Curriculum Vitae</a>
+                    <a href="${member.instagram}" target="_blank" class="member-link-btn">📸 Instagram</a>
+                    <a href="${member.showreel}" target="_blank" class="member-link-btn">🎬 Showreel</a>
+                    <div class="member-link-btn" style="grid-column: span 2; background: rgba(255,255,255,0.05); border-color: var(--border-color);">💼 Agenzia: ${member.agency}</div>
+                </div>
+            `;
+
+            document.getElementById('member-detail-content').innerHTML = content;
+            document.getElementById('modal-member-detail').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMemberModal() {
+            document.getElementById('modal-member-detail').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
     </script>
-    
+
 
 </body>
 </html>
