@@ -20,8 +20,8 @@
             --font-main: 'Montserrat', sans-serif;
             --font-heading: 'Space Grotesk', sans-serif;
         }
-/* Allineamento Hero a Sinistra */
-.hero, header, .hero-content {
+/* Allineamento della sola Hero Section a sinistra */
+.hero, .hero-content {
   text-align: left !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
@@ -31,9 +31,17 @@
   justify-content: flex-start !important;
 }
 
-/* Ingrandimento Logo */
-.logo img, img.logo {
-  height: 90px !important; /* Modifica questo valore per regolare la grandezza */
+/* Ripristino e allineamento corretto per Header e Logo */
+header, nav, .navbar {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Grandezza personalizzata Logo */
+.logo img, img.logo, .logo {
+  height: 65px !important; /* Regola questa altezza per ingrandire/rimpicciolire il logo */
   width: auto !important;
 }
         * {
