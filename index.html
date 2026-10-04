@@ -612,74 +612,92 @@ header {
     </div>
 
     <!-- Progetti Section -->
-    <section id="progetti">
-        <h2 class="section-title">Progetti</h2>
-        <p class="section-subtitle">Il nostro catalogo di produzioni e opere in fase di sviluppo, produzione e distribuzione.</p>
-
-        <div class="grid-2">
-            
-           <!-- Oscar -->
-        <div class="project-card">
-          <img class="project-poster" src="oscar-copertina.jpg" alt="Locandina di OSCAR" style="object-fit: contain; background-color: #000;" loading="lazy">
-          <div>
-            <div class="project-tag">In Uscita</div>
-            <h3 class="project-title">OSCAR</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Zorya Produzioni<br>
-            <strong>Regia:</strong> Federico Tallone<br>
-            <strong>Cast:</strong> Riccardo Martone, Leonardo Cappelli, Chiara Bono</p>
-          </div>
+    <section id="progetti" class="projects-section" style="padding: 60px 5%; width: 100%; box-sizing: border-box;">
+  
+  <!-- LUNGOMETRAGGI -->
+  <div style="margin-bottom: 60px;">
+    <h2 style="color: var(--fuchsia); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; text-align: left; font-family: var(--font-heading);">
+      LUNGOMETRAGGI
+    </h2>
+    <div class="projects-grid">
+      
+      <!-- CARD OSCAR -->
+      <div class="project-card">
+        <div class="project-poster-wrapper">
+          <img src="oscar-copertina.jpg" alt="Oscar" class="project-poster" onerror="this.src='https://via.placeholder.com/300x450/121216/ff33ac?text=Oscar'">
         </div>
-
-            <!-- Porcate! -->
-            <div class="project-card">
-                <div class="project-poster project-poster--placeholder" aria-hidden="true">Copertina<br>in arrivo</div>
-                <div>
-                    <div class="project-tag">In Sviluppo</div>
-                    <h3 class="project-title">PORCATE!</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Zorya Produzioni × Giriamola!<br>Lungometraggio in fase di sviluppo avanzato e rifinitura drammaturgica.</p>
-                </div>
-            </div>
-
-            <!-- Tu Mi Piaci, Ma Non Corriamo -->
-            <div class="project-card">
-                <div class="project-poster project-poster--placeholder" aria-hidden="true">Copertina<br>in arrivo</div>
-                <div>
-                    <div class="project-tag">Premiato</div>
-                    <h3 class="project-title">TU MI PIACI, MA NON CORRIAMO</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Regia & Sceneggiatura:</strong> Federico Tallone<br>🏆 Miglior Sceneggiatura, Miglior Attore, Menzione Rai Cinema.</p>
-                </div>
-            </div>
-
-            <!-- Mimosa -->
-        <div class="project-card">
-          <img class="project-poster" src="mimosa-copertina.jpg" alt="Locandina di MIMOSA" loading="lazy">
-          <div>
-            <div class="project-tag">Collaborazione CSC</div>
-            <h3 class="project-title">MIMOSA</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Regia:</strong> Lorenzo Lancellotti<br>🏆 Premio del Pubblico (Condorello Cinema Troisi).</p>
-          </div>
+        <div class="project-info">
+          <span class="badge" style="border: 1px solid var(--fuchsia); color: var(--fuchsia); padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 15px;">IN USCITA</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 10px; font-family: var(--font-heading);">OSCAR</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Produzione:</strong> Zorya Produzioni</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Regia:</strong> Federico Tallone</p>
+          <p style="font-size: 0.9rem; color: var(--text-muted);"><strong>Cast:</strong> Riccardo Martone, Leonardo Cappelli, Chiara Bono</p>
         </div>
+      </div>
 
-            <!-- Pecunia -->
-            <div class="project-card">
-            <img class="project-poster" src="pecunia-copertina.jpg" alt="Locandina di PECUNIA" loading="lazy">
-                <div>
-                    <div class="project-tag">Produzione Ufficiale</div>
-                    <h3 class="project-title">PECUNIA</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Produzione:</strong> Giriamola!<br>🏆 Premio Miglior Attore.</p>
-                </div>
-            </div>
+      <!-- CARD PORCATE! -->
+      <div class="project-card">
+        <div class="project-poster-wrapper" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); color: var(--text-muted); font-size: 0.8rem; text-align: center; letter-spacing: 1px; font-weight: 600;">
+          COPERTINA<br>IN ARRIVO
+        </div>
+        <div class="project-info">
+          <span class="badge" style="border: 1px solid var(--fuchsia); color: var(--fuchsia); padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 15px;">IN SVILUPPO</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 10px; font-family: var(--font-heading);">PORCATE!</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;"><strong>Produzione:</strong> Zorya Produzioni × Giriamola!</p>
+          <p style="font-size: 0.9rem; color: #ccc; line-height: 1.5;">Progetto di lungometraggio attualmente in fase di sviluppo avanzato e rifinitura drammaturgica. In cerca di co-produttori e partner di distribuzione.</p>
+        </div>
+      </div>
 
-            <!-- Le Strabilianti Avventure della Polizia di Sangano -->
-            <div class="project-card">
-                <div class="project-poster project-poster--placeholder" aria-hidden="true">Copertina<br>in arrivo</div>
-                <div>
-                    <div class="project-tag">Produzione Ufficiale</div>
-                    <h3 class="project-title">LE STRABILIANTI AVVENTURE DELLA POLIZIA DI SANGANO</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;"></p>
-                </div>
-            </div>
+    </div>
+  </div>
 
+  <!-- CORTOMETRAGGI -->
+  <div>
+    <h2 style="color: var(--fuchsia); font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; text-align: left; font-family: var(--font-heading);">
+      CORTOMETRAGGI
+    </h2>
+    <div class="projects-grid">
+      
+      <!-- CARD TU MI PIACI, MA NON CORRIAMO -->
+      <div class="project-card">
+        <div class="project-poster-wrapper" style="display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); color: var(--text-muted); font-size: 0.8rem; text-align: center; letter-spacing: 1px; font-weight: 600;">
+          COPERTINA<br>IN ARRIVO
+        </div>
+        <div class="project-info">
+          <span class="badge" style="border: 1px solid var(--fuchsia); color: var(--fuchsia); padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 15px;">PREMIATO</span>
+          <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 10px; font-family: var(--font-heading); line-height: 1.2;">TU MI PIACI, MA NON CORRIAMO</h3>
+        </div>
+      </div>
+
+      <!-- CARD MIMOSA -->
+      <div class="project-card">
+        <div class="project-poster-wrapper">
+          <img src="mimosa-copertina.jpg" alt="Mimosa" class="project-poster" onerror="this.src='https://via.placeholder.com/300x450/121216/ff33ac?text=Mimosa'">
+        </div>
+        <div class="project-info">
+          <span class="badge" style="border: 1px solid var(--fuchsia); color: var(--fuchsia); padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 15px;">COLLABORAZIONE CSC</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 10px; font-family: var(--font-heading);">MIMOSA</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">In collaborazione con: Centro Sperimentale di Cinematografia</p>
+        </div>
+      </div>
+
+      <!-- CARD PECUNIA -->
+      <div class="project-card">
+        <div class="project-poster-wrapper">
+          <img src="pecunia-copertina.jpg" alt="Pecunia" class="project-poster" onerror="this.src='https://via.placeholder.com/300x450/121216/ff33ac?text=Pecunia'">
+        </div>
+        <div class="project-info">
+          <span class="badge" style="border: 1px solid var(--fuchsia); color: var(--fuchsia); padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 15px;">PRODUZIONE UFFICIALE</span>
+          <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 10px; font-family: var(--font-heading);">PECUNIA</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Produzione:</strong> Giriamola!</p>
+          <p style="font-size: 0.9rem; color: #fff; font-weight: 500;">🏆 Premio Miglior Attore</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
         </div>
 
         <h3 class="category-header">FORMAT & CONTENUTI DIGITALI</h3>
