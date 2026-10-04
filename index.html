@@ -525,8 +525,24 @@ header {
         .member-photo {
             width: 100%;
             height: 100%;
+            display: block;
             object-fit: cover;
+            object-position: var(--photo-pos, 50% 50%);
+            transform: scale(var(--photo-zoom, 1));
+            transform-origin: var(--photo-pos, 50% 50%);
         }
+
+        /* ===== REGOLAZIONE FOTO MEMBRI =====
+           --photo-pos:  centratura "X% Y%" (0% = sinistra/alto, 100% = destra/basso)
+           --photo-zoom: zoom (1 = normale, 1.2 = +20%, 1.5 = +50%)
+           Valgono per la griglia, la modale "Tutti i membri" e la scheda singola. */
+        .member-photo[data-member="riccardo-martone"]    { --photo-pos: 50% 50%; --photo-zoom: 1; }
+        .member-photo[data-member="federico-tallone"]    { --photo-pos: 50% 50%; --photo-zoom: 1; }
+        .member-photo[data-member="lorenzo-lancellotti"] { --photo-pos: 50% 50%; --photo-zoom: 1; }
+        .member-photo[data-member="leonardo-cappelli"]   { --photo-pos: 50% 50%; --photo-zoom: 1; }
+        .member-photo[data-member="aurora-dimodugno"]    { --photo-pos: 50% 50%; --photo-zoom: 1; }
+        .member-photo[data-member="brando-parini"]       { --photo-pos: 50% 50%; --photo-zoom: 1; }
+        .member-photo[data-member="leonardo-pietrini"]   { --photo-pos: 50% 50%; --photo-zoom: 1; }
 
         .member-name {
             font-size: 1.1rem;
@@ -740,7 +756,7 @@ header {
             <!-- Membro 1 -->
             <div class="card member-card" onclick="openMemberModal('riccardo-martone')">
                 <div class="member-photo-wrapper">
-                    <img src="foto-riccardo.jpg" alt="Riccardo Martone" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=RM'">
+                    <img src="foto-riccardo.jpg" alt="Riccardo Martone" class="member-photo" data-member="riccardo-martone" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=RM'">
                 </div>
                 <h3 class="member-name">RICCARDO MARTONE</h3>
                 <p class="member-role">Attore / Produttore Creativo / Coordinatore</p>
@@ -750,7 +766,7 @@ header {
             <!-- Membro 2 -->
             <div class="card member-card" onclick="openMemberModal('federico-tallone')">
                 <div class="member-photo-wrapper">
-                    <img src="foto-federico.jpg" alt="Federico Tallone" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=FT'">
+                    <img src="foto-federico.jpg" alt="Federico Tallone" class="member-photo" data-member="federico-tallone" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=FT'">
                 </div>
                 <h3 class="member-name">FEDERICO TALLONE</h3>
                 <p class="member-role">Autore / Regista / Sceneggiatore / Organizzatore Generale</p>
@@ -760,7 +776,7 @@ header {
             <!-- Membro 3 -->
             <div class="card member-card" onclick="openMemberModal('lorenzo-lancellotti')">
                 <div class="member-photo-wrapper">
-                    <img src="foto-lorenzo.jpg" alt="Lorenzo Lancellotti" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LL'">
+                    <img src="foto-lorenzo.jpg" alt="Lorenzo Lancellotti" class="member-photo" data-member="lorenzo-lancellotti" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LL'">
                 </div>
                 <h3 class="member-name">LORENZO LANCELLOTTI</h3>
                 <p class="member-role">Regista / Attore</p>
@@ -770,7 +786,7 @@ header {
             <!-- Membro 4 -->
             <div class="card member-card" onclick="openMemberModal('leonardo-cappelli')">
                 <div class="member-photo-wrapper">
-                    <img src="foto-leonardo.jpg" alt="Leonardo Cappelli" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LC'">
+                    <img src="foto-leonardo.jpg" alt="Leonardo Cappelli" class="member-photo" data-member="leonardo-cappelli" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LC'">
                 </div>
                 <h3 class="member-name">LEONARDO CAPPELLI</h3>
                 <p class="member-role">Attore / Costumista</p>
@@ -780,7 +796,7 @@ header {
             <!-- Membro 5 -->
             <div class="card member-card" onclick="openMemberModal('aurora-dimodugno')">
                 <div class="member-photo-wrapper">
-                    <img src="foto-aurora.jpg" alt="Aurora Di Modugno" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=AD'">
+                    <img src="foto-aurora.jpg" alt="Aurora Di Modugno" class="member-photo" data-member="aurora-dimodugno" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=AD'">
                 </div>
                 <h3 class="member-name">AURORA DI MODUGNO</h3>
                 <p class="member-role">Attrice</p>
@@ -790,7 +806,7 @@ header {
             <!-- Membro 6 -->
             <div class="card member-card" onclick="openMemberModal('brando-parini')">
                 <div class="member-photo-wrapper">
-                    <img src="foto-nicola.jpg.jpg" alt="Nicola Brando Parini" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=NP'">
+                    <img src="foto-nicola.jpg.jpg" alt="Nicola Brando Parini" class="member-photo" data-member="brando-parini" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=NP'">
                 </div>
                 <h3 class="member-name">NICOLA BRANDO PARINI</h3>
                 <p class="member-role">Attore</p>
@@ -1014,37 +1030,37 @@ header {
             
             <div class="grid-3">
                 <div class="card member-card" onclick="openMemberModal('riccardo-martone')">
-                    <div class="member-photo-wrapper"><img src="foto-riccardo.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=RM'"></div>
+                    <div class="member-photo-wrapper"><img src="foto-riccardo.jpg" alt="Riccardo Martone" class="member-photo" data-member="riccardo-martone" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=RM'"></div>
                     <h3 class="member-name">RICCARDO MARTONE</h3>
                     <p class="member-role">Attore / Produttore Creativo / Coordinatore</p>
                 </div>
                 <div class="card member-card" onclick="openMemberModal('federico-tallone')">
-                    <div class="member-photo-wrapper"><img src="foto-federico.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=FT'"></div>
+                    <div class="member-photo-wrapper"><img src="foto-federico.jpg" alt="Federico Tallone" class="member-photo" data-member="federico-tallone" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=FT'"></div>
                     <h3 class="member-name">FEDERICO TALLONE</h3>
                     <p class="member-role">Autore / Regista / Sceneggiatore / Organizzatore Generale</p>
                 </div>
                 <div class="card member-card" onclick="openMemberModal('lorenzo-lancellotti')">
-                    <div class="member-photo-wrapper"><img src="foto-lorenzo.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LL'"></div>
+                    <div class="member-photo-wrapper"><img src="foto-lorenzo.jpg" alt="Lorenzo Lancellotti" class="member-photo" data-member="lorenzo-lancellotti" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LL'"></div>
                     <h3 class="member-name">LORENZO LANCELLOTTI</h3>
                     <p class="member-role">Regista / Attore</p>
                 </div>
                 <div class="card member-card" onclick="openMemberModal('leonardo-cappelli')">
-                    <div class="member-photo-wrapper"><img src="foto-leonardo.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LC'"></div>
+                    <div class="member-photo-wrapper"><img src="foto-leonardo.jpg" alt="Leonardo Cappelli" class="member-photo" data-member="leonardo-cappelli" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LC'"></div>
                     <h3 class="member-name">LEONARDO CAPPELLI</h3>
                     <p class="member-role">Attore / Costumista</p>
                 </div>
                 <div class="card member-card" onclick="openMemberModal('aurora-dimodugno')">
-                    <div class="member-photo-wrapper"><img src="foto-aurora.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=AD'"></div>
+                    <div class="member-photo-wrapper"><img src="foto-aurora.jpg" alt="Aurora Di Modugno" class="member-photo" data-member="aurora-dimodugno" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=AD'"></div>
                     <h3 class="member-name">AURORA DI MODUGNO</h3>
                     <p class="member-role">Attrice</p>
                 </div>
                 <div class="card member-card" onclick="openMemberModal('brando-parini')">
-                    <div class="member-photo-wrapper"><img src="foto-nicola.jpg.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=NP'"></div>
+                    <div class="member-photo-wrapper"><img src="foto-nicola.jpg.jpg" alt="Nicola Brando Parini" class="member-photo" data-member="brando-parini" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=NP'"></div>
                     <h3 class="member-name">NICOLA BRANDO PARINI</h3>
                     <p class="member-role">Attore</p>
                 </div>
                 <div class="card member-card" onclick="openMemberModal('leonardo-pietrini')">
-                    <div class="member-photo-wrapper"><img src="foto-pietrini.jpg" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LP'"></div>
+                    <div class="member-photo-wrapper"><img src="foto-pietrini.jpg" alt="Leonardo Pietrini" class="member-photo" data-member="leonardo-pietrini" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=LP'"></div>
                     <h3 class="member-name">LEONARDO PIETRINI</h3>
                     <p class="member-role">Attore</p>
                 </div>
@@ -1144,7 +1160,7 @@ header {
             if (!member) return;
             const content = `
                 <div class="member-photo-wrapper" style="width: 140px; height: 140px; margin: 0 auto 20px;">
-                    <img src="${member.photo}" class="member-photo" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=${member.name.charAt(0)}'">
+                    <img src="${member.photo}" alt="${member.name}" class="member-photo" data-member="${id}" onerror="this.src='https://via.placeholder.com/150/121216/ff33ac?text=${member.name.charAt(0)}'">
                 </div>
                 <h2 style="color: #fff; font-size: 1.5rem; margin-bottom: 5px;">${member.name}</h2>
                 <p style="color: var(--fuchsia); font-weight: 600; font-size: 0.95rem; margin-bottom: 20px;">${member.role}</p>
