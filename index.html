@@ -20,7 +20,22 @@
             --font-main: 'Montserrat', sans-serif;
             --font-heading: 'Space Grotesk', sans-serif;
         }
+/* Allineamento Hero a Sinistra */
+.hero, header, .hero-content {
+  text-align: left !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+}
 
+.hero .cta-buttons, .cta-group {
+  justify-content: flex-start !important;
+}
+
+/* Ingrandimento Logo */
+.logo img, img.logo {
+  height: 90px !important; /* Modifica questo valore per regolare la grandezza */
+  width: auto !important;
+}
         * {
             box-sizing: border-box;
             margin: 0;
