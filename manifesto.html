@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Manifesto - GIRIAMOLA!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --card-bg: #121216;
+            --fuchsia: #ff33ac;
+            --text-color: #ffffff;
+            --text-muted: #b0b3c1;
+            --border-color: #22222a;
+            --font-main: 'Montserrat', sans-serif;
+            --font-heading: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .back-link {
+            color: var(--fuchsia);
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            color: var(--fuchsia);
+            font-weight: 700;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .points-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .point-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--fuchsia);
+            border-radius: 6px;
+            padding: 20px 25px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .point-number {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--fuchsia);
+            min-width: 35px;
+        }
+
+        .point-text {
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Torna alla Home</a>
+        
+        <h1>IL MANIFESTO</h1>
+        <p class="intro">IL FENICOTTERO È L'UNICA COSA CHE CONTA.</p>
+
+        <ol class="points-list">
+            <li class="point-item"><span class="point-number">01</span><span class="point-text">Ruba più che puoi.</span></li>
+            <li class="point-item"><span class="point-number">02</span><span class="point-text">Se ti fa sentire felice, se ti fa sentire vivo, non è una perdita di tempo.</span></li>
+            <li class="point-item"><span class="point-number">03</span><span class="point-text">Fare serve per scoprire se hai pensato bene, non per applicare ciò a cui hai pensato.</span></li>
+            <li class="point-item"><span class="point-number">04</span><span class="point-text">Gioca con la stessa serietà dei bambini.</span></li>
+            <li class="point-item"><span class="point-number">05</span><span class="point-text">Ci vuole il tempo che ci vuole, quindi goditi il viaggio, goditi il paesaggio.</span></li>
+            <li class="point-item"><span class="point-number">06</span><span class="point-text">Sii artigiano, non artista.</span></li>
+            <li class="point-item"><span class="point-number">07</span><span class="point-text">Sii sempre disponibile a cambiare progetto.</span></li>
+            <li class="point-item"><span class="point-number">08</span><span class="point-text">I soldi sono un mezzo, non il fine.</span></li>
+            <li class="point-item"><span class="point-number">09</span><span class="point-text">"Forse" è la parola d'ordine.</span></li>
+            <li class="point-item"><span class="point-number">10</span><span class="point-text">Ciò che conta è essere in disequilibrio.</span></li>
+        </ol>
+    </div>
+
+</body>
+</html>
