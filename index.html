@@ -666,14 +666,17 @@ header {
       
     <!-- CARD TU MI PIACI, MA NON CORRIAMO -->
 <a href="tu-mi-piaci-ma-non-corriamo.html" class="project-card card-link" style="text-decoration: none; display: flex; width: 100%;">
-  <div class="project-poster-wrapper">
-    <img src="tumipiaci-copertina.jpg" alt="Tu Mi Piaci, Ma Non Corriamo" class="project-poster" onerror="this.src='https://via.placeholder.com/300x450/121216/ff33ac?text=Tu+Mi+Piaci'">
+  <div class="project-poster-wrapper" style="width: 120px; flex-shrink: 0;">
+    <img src="tumipiaci-copertina.jpg" alt="Tu Mi Piaci, Ma Non Corriamo" class="project-poster" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div style="display: none; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); color: var(--text-muted); font-size: 0.75rem; text-align: center; letter-spacing: 1px; font-weight: 600; width: 120px; aspect-ratio: 2 / 3; border-radius: 4px; border: 1px dashed var(--border-color);">
+      COPERTINA<br>IN ARRIVO
+    </div>
   </div>
   <div class="project-info" style="margin-left: 20px;">
-    <span class="badge" style="border: 1px solid var(--fuchsia); color: var(--fuchsia); padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 15px;">PREMIATO</span>
-    <h3 style="font-size: 1.8rem; color: #fff; margin-bottom: 10px; font-family: var(--font-heading);">TU MI PIACI, MA NON CORRIAMO</h3>
-    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 8px;"><strong>Regia:</strong> Lorenzo Lancellotti</p>
-    <p style="font-size: 0.9rem; color: #fff; font-weight: 500; margin-bottom: 10px;">🏆 Miglior Sceneggiatura & Menzione Rai Cinema</p>
+    <span class="badge" style="border: 1px solid var(--fuchsia); color: var(--fuchsia); padding: 4px 10px; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 10px;">PREMIATO</span>
+    <h3 style="font-size: 1.25rem; line-height: 1.2; color: #fff; margin-bottom: 8px; font-family: var(--font-heading);">TU MI PIACI, MA NON CORRIAMO</h3>
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;"><strong>Regia:</strong> Lorenzo Lancellotti</p>
+    <p style="font-size: 0.85rem; color: #fff; font-weight: 500; margin-bottom: 10px;">🏆 Miglior Sceneggiatura & Menzione Rai Cinema</p>
     <span style="color: var(--fuchsia); font-size: 0.85rem; font-weight: bold;">Guarda il cortometraggio →</span>
   </div>
 </a>
