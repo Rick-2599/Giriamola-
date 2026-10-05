@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutti i Membri - Crew & Cast</title>
+    <title>Tutti i Membri - GIRIAMOLA!</title>
     <link rel="stylesheet" href="style.css">
     <style>
         :root {
@@ -22,70 +22,132 @@
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 50px 20px;
         }
         .back-link {
             color: var(--fuchsia);
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
             transition: opacity 0.2s;
         }
         .back-link:hover {
             opacity: 0.8;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-weight: 800;
         }
         .subtitle {
             color: var(--text-muted);
             margin-bottom: 50px;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
         section {
-            margin-bottom: 45px;
+            margin-bottom: 55px;
         }
         h2 {
             color: var(--fuchsia);
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 12px;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
+        
+        /* Griglia schede membri */
         .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 22px;
             list-style: none;
             padding: 0;
             margin: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 12px;
         }
+
         .member-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-color);
-            padding: 14px 18px;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 0.95krem;
-            transition: border-color 0.2s, background 0.2s;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
+
         .member-card:hover {
             border-color: var(--fuchsia);
-            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(255, 51, 172, 0.25);
         }
-        .empty-notice {
+
+        /* Contenitore Immagine Verticale */
+        .member-photo-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            background: #181818;
+            overflow: hidden;
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Placeholder quando manca la foto */
+        .photo-placeholder {
+            display: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: 600;
+            padding: 10px;
+            box-sizing: border-box;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .member-info {
+            padding: 16px 12px;
+            text-align: center;
+        }
+
+        .member-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .member-role {
+            font-size: 0.8rem;
+            color: var(--fuchsia);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .empty-section {
             color: var(--text-muted);
             font-style: italic;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin: 0;
         }
     </style>
@@ -96,73 +158,176 @@
         <a href="index.html" class="back-link">← Torna alla Home</a>
         
         <h1>Tutti i Membri</h1>
-        <p class="subtitle">Il cast artistico e tecnico che collabora alle nostre produzioni.</p>
+        <p class="subtitle">Il cast artistico e le maestranze tecniche di GIRIAMOLA!</p>
 
         <!-- 1. REGISTI -->
         <section>
             <h2>Registi</h2>
-            <ul class="members-grid">
-                <li class="member-card">Federico</li>
-                <li class="member-card">Lorenzo</li>
-                <li class="member-card">Luca Bronis</li>
-                <li class="member-card">Sergio Milani</li>
-            </ul>
+            <div class="members-grid">
+                
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-federico.jpg" alt="Federico" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Federico</h3>
+                        <p class="member-role">Regista</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-lorenzo.jpg" alt="Lorenzo" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Lorenzo</h3>
+                        <p class="member-role">Regista</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-luca.jpg" alt="Luca Bronis" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Luca Bronis</h3>
+                        <p class="member-role">Regista</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-sergio.jpg" alt="Sergio Milani" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Sergio Milani</h3>
+                        <p class="member-role">Regista</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <!-- 2. ATTORI -->
         <section>
             <h2>Attori</h2>
-            <ul class="members-grid">
-                <li class="member-card">Riccardo</li>
-                <li class="member-card">Leonardo</li>
-                <li class="member-card">Edoardo</li>
-                <li class="member-card">Nicola Brando</li>
-                <li class="member-card">Leonardo Pietrini</li>
-            </ul>
+            <div class="members-grid">
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-riccardo.jpg" alt="Riccardo" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Riccardo</h3>
+                        <p class="member-role">Attore</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-leonardo.jpg" alt="Leonardo" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Leonardo</h3>
+                        <p class="member-role">Attore</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-edo.jpeg" alt="Edoardo" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Edoardo</h3>
+                        <p class="member-role">Attore</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-nicola.jpg.jpg" alt="Nicola Brando" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Nicola Brando</h3>
+                        <p class="member-role">Attore</p>
+                    </div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-pietrini.jpg" alt="Leonardo Pietrini" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Leonardo Pietrini</h3>
+                        <p class="member-role">Attore</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <!-- 3. ATTRICI -->
         <section>
             <h2>Attrici</h2>
-            <ul class="members-grid">
-                <li class="member-card">Aurora Di Modugno</li>
-            </ul>
+            <div class="members-grid">
+
+                <div class="member-card">
+                    <div class="member-photo-wrapper">
+                        <img src="foto-aurora.jpg" alt="Aurora Di Modugno" class="member-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder">FOTO IN ARRIVO</div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Aurora Di Modugno</h3>
+                        <p class="member-role">Attrice</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <!-- 4. D.O.P -->
+        <!-- 4. D.O.P. -->
         <section>
             <h2>D.O.P.</h2>
-            <p class="empty-notice">Sezione in aggiornamento...</p>
+            <p class="empty-section">Sezione in aggiornamento...</p>
         </section>
 
         <!-- 5. MUSICISTI ED INGEGNERI DEL SUONO -->
         <section>
             <h2>Musicisti ed Ingegneri del Suono</h2>
-            <p class="empty-notice">Sezione in aggiornamento...</p>
+            <p class="empty-section">Sezione in aggiornamento...</p>
         </section>
 
         <!-- 6. COSTUMISTI -->
         <section>
             <h2>Costumisti</h2>
-            <p class="empty-notice">Sezione in aggiornamento...</p>
+            <p class="empty-section">Sezione in aggiornamento...</p>
         </section>
 
         <!-- 7. SCENOGRAFI -->
         <section>
             <h2>Scenografi</h2>
-            <p class="empty-notice">Sezione in aggiornamento...</p>
+            <p class="empty-section">Sezione in aggiornamento...</p>
         </section>
 
         <!-- 8. SCENEGGIATORI -->
         <section>
             <h2>Sceneggiatori</h2>
-            <p class="empty-notice">Sezione in aggiornamento...</p>
+            <p class="empty-section">Sezione in aggiornamento...</p>
         </section>
 
         <!-- 9. PRODUTTORI -->
         <section>
             <h2>Produttori</h2>
-            <p class="empty-notice">Sezione in aggiornamento...</p>
+            <p class="empty-section">Sezione in aggiornamento...</p>
         </section>
 
     </div>
