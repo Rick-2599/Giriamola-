@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TU MI PIACI, MA NON CORRIAMO | GIRIAMOLA!</title>
+    <meta name="description" content="Tu Mi Piaci, Ma Non Corriamo - Cortometraggio diretto da Lorenzo Lancellotti.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --card-bg: #121216;
+            --fuchsia: #ff33ac;
+            --fuchsia-glow: rgba(255, 51, 172, 0.25);
+            --text-color: #ffffff;
+            --text-muted: #b0b3c1;
+            --border-color: #22222a;
+            --font-main: 'Montserrat', sans-serif;
+            --font-heading: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 12, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 0 8px var(--fuchsia-glow));
+        }
+
+        .btn-back {
+            color: var(--fuchsia);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.2s;
+        }
+
+        .btn-back:hover {
+            transform: translateX(-4px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .project-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px var(--fuchsia-glow);
+        }
+
+        .awards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .award-badge {
+            background: rgba(255, 51, 172, 0.12);
+            border: 1px solid var(--fuchsia);
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 30px var(--fuchsia-glow);
+            margin-bottom: 50px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .section-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 35px;
+            margin-bottom: 30px;
+        }
+
+        .section-box h2 {
+            color: var(--fuchsia);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-box h2::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 18px;
+            background-color: var(--fuchsia);
+            border-radius: 2px;
+        }
+
+        .synopsis-text {
+            font-size: 1.1rem;
+            color: #e0e2ec;
+            line-height: 1.8;
+        }
+
+        .grid-credits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .credit-list {
+            list-style: none;
+        }
+
+        .credit-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+
+        .credit-role {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .credit-name {
+            color: #fff;
+            font-weight: 700;
+            text-align: right;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="IMG_5054.png" alt="GIRIAMOLA!"></a>
+        <a href="index.html#progetti" class="btn-back">← Torna ai Progetti</a>
+    </header>
+
+    <main class="container">
+        
+        <!-- Intestazione Titolo e Premi -->
+        <div class="project-header">
+            <h1 class="project-title">TU MI PIACI, MA NON CORRIAMO</h1>
+            
+            <div class="awards-container">
+                <span class="award-badge">🏆 Miglior Sceneggiatura</span>
+                <span class="award-badge">🏆 Interpretazione Maschile</span>
+                <span class="award-badge">🏆 Menzione Speciale Rai Cinema YouTube</span>
+            </div>
+        </div>
+
+        <!-- Player Video YouTube Integrato -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/QiYzMm-pUTc?autoplay=0" title="TU MI PIACI, MA NON CORRIAMO" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Sinossi -->
+        <div class="section-box">
+            <h2>Sinossi</h2>
+            <p class="synopsis-text">
+                In un futuro dominato dalla tecnologia, 4e20 acquista clandestinamente Adamo, un androide sessuale indistinguibile da un essere umano. Cento30, terrorizzato dalle conseguenze e dalla sua inquietante somiglianza con loro, vuole distruggerlo. Ma prima decidono di accenderlo per un minuto. Adamo, anziché comportarsi come una macchina, pone una semplice domanda: <em>«Voi, come state?»</em>
+            </p>
+        </div>
+
+        <!-- Cast & Credits Grid -->
+        <div class="grid-credits">
+            
+            <!-- Cast (Interpreti) -->
+            <div class="section-box">
+                <h2>Interpreti</h2>
+                <ul class="credit-list">
+                    <li class="credit-item">
+                        <span class="credit-role">CENTO30</span>
+                        <span class="credit-name">Riccardo Martone</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">4E+20</span>
+                        <span class="credit-name">Aurora Di Modugno</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">ADAMO</span>
+                        <span class="credit-name">Christian Carere</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Troupe (Credits) -->
+            <div class="section-box">
+                <h2>Troupe & Credits</h2>
+                <ul class="credit-list">
+                    <li class="credit-item">
+                        <span class="credit-role">Regia</span>
+                        <span class="credit-name">Lorenzo Lancellotti</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Sceneggiatura</span>
+                        <span class="credit-name">Federico Tallone</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Fotografia</span>
+                        <span class="credit-name">L. Lancellotti, F. Tallone</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Organizzazione generale</span>
+                        <span class="credit-name">Federico Tallone</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Aiuto regia</span>
+                        <span class="credit-name">Davide Goli Junior</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">AI Artist</span>
+                        <span class="credit-name">Stefano Lavori</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Suono</span>
+                        <span class="credit-name">Gabriele Gallo</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Musiche Originali</span>
+                        <span class="credit-name">Edoardo Petracci</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Costumista</span>
+                        <span class="credit-name">Leonardo Cappelli</span>
+                    </li>
+                    <li class="credit-item">
+                        <span class="credit-role">Hair & Make-up</span>
+                        <span class="credit-name">Mariarosa Rosi</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© GIRIAMOLA! — Hub di sviluppo e produzione cinematografica indipendente</p>
+    </footer>
+
+</body>
+</html>
