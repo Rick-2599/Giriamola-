@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutti i Membri - Crew & Cast</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --fuchsia: #ff33ac;
+            --bg-dark: #0b0b0b;
+            --text-main: #ffffff;
+            --text-muted: #888888;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .back-link {
+            color: var(--fuchsia);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover {
+            opacity: 0.8;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 1rem;
+        }
+        section {
+            margin-bottom: 45px;
+        }
+        h2 {
+            color: var(--fuchsia);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .members-grid {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+        .member-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95krem;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .member-card:hover {
+            border-color: var(--fuchsia);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .empty-notice {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Torna alla Home</a>
+        
+        <h1>Tutti i Membri</h1>
+        <p class="subtitle">Il cast artistico e tecnico che collabora alle nostre produzioni.</p>
+
+        <!-- 1. REGISTI -->
+        <section>
+            <h2>Registi</h2>
+            <ul class="members-grid">
+                <li class="member-card">Federico</li>
+                <li class="member-card">Lorenzo</li>
+                <li class="member-card">Luca Bronis</li>
+                <li class="member-card">Sergio Milani</li>
+            </ul>
+        </section>
+
+        <!-- 2. ATTORI -->
+        <section>
+            <h2>Attori</h2>
+            <ul class="members-grid">
+                <li class="member-card">Riccardo</li>
+                <li class="member-card">Leonardo</li>
+                <li class="member-card">Edoardo</li>
+                <li class="member-card">Nicola Brando</li>
+                <li class="member-card">Leonardo Pietrini</li>
+            </ul>
+        </section>
+
+        <!-- 3. ATTRICI -->
+        <section>
+            <h2>Attrici</h2>
+            <ul class="members-grid">
+                <li class="member-card">Aurora Di Modugno</li>
+            </ul>
+        </section>
+
+        <!-- 4. D.O.P -->
+        <section>
+            <h2>D.O.P.</h2>
+            <p class="empty-notice">Sezione in aggiornamento...</p>
+        </section>
+
+        <!-- 5. MUSICISTI ED INGEGNERI DEL SUONO -->
+        <section>
+            <h2>Musicisti ed Ingegneri del Suono</h2>
+            <p class="empty-notice">Sezione in aggiornamento...</p>
+        </section>
+
+        <!-- 6. COSTUMISTI -->
+        <section>
+            <h2>Costumisti</h2>
+            <p class="empty-notice">Sezione in aggiornamento...</p>
+        </section>
+
+        <!-- 7. SCENOGRAFI -->
+        <section>
+            <h2>Scenografi</h2>
+            <p class="empty-notice">Sezione in aggiornamento...</p>
+        </section>
+
+        <!-- 8. SCENEGGIATORI -->
+        <section>
+            <h2>Sceneggiatori</h2>
+            <p class="empty-notice">Sezione in aggiornamento...</p>
+        </section>
+
+        <!-- 9. PRODUTTORI -->
+        <section>
+            <h2>Produttori</h2>
+            <p class="empty-notice">Sezione in aggiornamento...</p>
+        </section>
+
+    </div>
+
+</body>
+</html>
