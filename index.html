@@ -581,26 +581,29 @@ header {
         </nav>
     </header>
 
-    <!-- Hero Section con Video di Sfondo -->
+  <!-- Hero Section con Video di Sfondo -->
     <section class="hero" style="position: relative; overflow: hidden; text-align: left;">
         
-        <!-- Video YouTube in Background (senza comandi e non interattivo) -->
+        <!-- Video YouTube in Background (Senza comandi centrali |<, ||, >|) -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; pointer-events: none; opacity: 0.35;">
+            
+            <!-- Schermo trasparente di protezione totale -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; background: transparent; pointer-events: auto;"></div>
+            
             <iframe 
-                src="https://www.youtube.com/embed/u9wiRlWBzXM?autoplay=1&mute=1&loop=1&playlist=u9wiRlWBzXM&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0&disablekb=1&fs=0&playsinline=1" 
+                src="https://www.youtube-nocookie.com/embed/u9wiRlWBzXM?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1&modestbranding=1&rel=0&disablekb=1&fs=0&playsinline=1" 
                 title="Giriamola Hero Background Video"
-                style="width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: none; pointer-events: none;"
-                tabindex="-1">
+                tabindex="-1"
+                style="width: 100vw; height: 56.25vw; min-height: 140vh; min-width: 230vh; position: absolute; top: 42%; left: 50%; transform: translate(-50%, -50%) scale(1.45); border: none; pointer-events: none;">
             </iframe>
         </div>
 
-        <!-- Contenuto Hero (Allineato a Sinistra) -->
-        <div class="hero-content" style="position: relative; z-index: 2; width: 100%; text-align: left;">
+        <!-- Contenuto Hero (Allineato a Sinistra - 2 Pulsanti) -->
+        <div class="hero-content" style="position: relative; z-index: 3; width: 100%; text-align: left;">
             <h1>IL FENICOTTERO È L'UNICA COSA CHE CONTA.</h1>
             <p>Un nucleo creativo e produttivo in continua creazione. Sviluppiamo storie, format e sceneggiature pronte per la produzione, mettendo a disposizione del mercato cinematografico un cast affiatato e progetti già strutturati in ogni fase.</p>
             <div class="hero-buttons" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: flex-start;">
                 <a href="#contatti" class="btn">Collabora con noi</a>
-                <a href="#progetti" class="btn btn-outline">Esplora i Progetti</a>
                 <button onclick="openVideoModal()" class="btn btn-outline btn-video">
                     <span aria-hidden="true">▶ </span>Guarda Presentazione
                 </button>
