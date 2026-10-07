@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riccardo Martone — Giriamola!</title>
+  <link rel="stylesheet" href="../style.css"> <!-- Link al tuo CSS principale -->
+  <style>
+    /* STILI DEDICATI ALLA PAGINA MEMBRO */
+    body {
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .member-page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* Tasto Torna Indietro */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: #ff2a70; }
+
+    /* Layout Principale a 2 Colonne */
+    .member-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* Colonna Sinistra (Sidebar) */
+    .sidebar-card {
+      position: sticky;
+      top: 40px;
+      background: #161616;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .member-name-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .member-role-subtitle {
+      color: #ff2a70;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .specs-list {
+      font-size: 0.85rem;
+      color: #ccc;
+      line-height: 1.8;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 15px 0;
+      margin-bottom: 20px;
+    }
+    .specs-list span { color: #777; }
+
+    /* Box Agenzia */
+    .agency-card {
+      background: #202020;
+      border-left: 3px solid #ff2a70;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .agency-label { font-size: 0.7rem; color: #888; font-weight: 700; letter-spacing: 0.5px; }
+    .agency-title { font-size: 1rem; font-weight: 700; color: #fff; margin: 4px 0; }
+    .agency-agent { font-size: 0.85rem; color: #bbb; margin-bottom: 10px; }
+    .agency-contact { display: block; color: #aaa; text-decoration: none; font-size: 0.85rem; margin-top: 4px; }
+    .agency-contact:hover { color: #fff; }
+
+    .agency-btn {
+      display: block;
+      text-align: center;
+      background: #ff2a70;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 12px;
+      transition: opacity 0.2s;
+    }
+    .agency-btn:hover { opacity: 0.9; }
+
+    .social-link-btn {
+      display: block;
+      text-align: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .social-link-btn:hover { background: #fff; color: #000; }
+
+    /* Colonna Destra (Contenuti Main) */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 10px;
+      margin: 40px 0 20px 0;
+    }
+    .section-header:first-of-type { margin-top: 0; }
+
+    .section-header h2 {
+      font-size: 1.2rem;
+      color: #ff2a70;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .bio-p { font-size: 1rem; line-height: 1.7; color: #ddd; }
+
+    /* Video Showreel Embed */
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+
+    /* CV Section */
+    .cv-download-link {
+      font-size: 0.8rem;
+      color: #aaa;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 5px 12px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+    .cv-download-link:hover { color: #fff; border-color: #fff; }
+
+    .cv-group { margin-bottom: 25px; }
+    .cv-group h3 { font-size: 0.85rem; color: #777; letter-spacing: 1px; margin-bottom: 10px; }
+    .cv-items { list-style: none; padding: 0; margin: 0; }
+    .cv-items li {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 8px;
+      padding-left: 14px;
+      border-left: 2px solid rgba(255,255,255,0.15);
+    }
+
+    /* Responsive per Smartphone */
+    @media (max-width: 850px) {
+      .member-grid { grid-template-columns: 1fr; gap: 30px; }
+      .sidebar-card { position: relative; top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="member-page-container">
+    <!-- Pulsante per tornare alla Home/Sezione Membri -->
+    <a href="../index.html#membri" class="back-btn">← Torna a tutti i membri</a>
+
+    <div class="member-grid">
+      
+      <!-- COLONNA SINISTRA: Foto + Info Rapide + Agenzia -->
+      <aside class="sidebar-card">
+        <img src="../foto-riccardo.jpg" alt="Riccardo Martone" class="profile-photo">
+        
+        <h1 class="member-name-title">RICCARDO MARTONE</h1>
+        <div class="member-role-subtitle">Attore / Produttore Creativo / Coordinatore</div>
+
+        <div class="specs-list">
+          <div><span>Altezza:</span> 181 cm</div>
+          <div><span>Peso:</span> 61 kg</div>
+          <div><span>Capelli:</span> Castani</div>
+          <div><span>Occhi:</span> Castani</div>
+          <div><span>Lingue:</span> Italiano (madrelingua), Inglese (Avanzato), Francese (Base)</div>
+        </div>
+
+        <!-- Box Agenzia con Link Diretto -->
+        <div class="agency-card">
+          <div class="agency-label">REPRESENTATION / MANAGEMENT</div>
+          <div class="agency-title">JDL Management</div>
+          <div class="agency-agent">Agente: Jacopo De Luca</div>
+          <a href="tel:+390645447116" class="agency-contact">📞 +39 06 45447116</a>
+          <a href="mailto:info@jdlmanagement.it" class="agency-contact">✉️ info@jdlmanagement.it</a>
+          
+          <a href="https://www.jdlmanagement.it" target="_blank" rel="noopener noreferrer" class="agency-btn">
+            Profilo su JDL Management ↗
+          </a>
+        </div>
+
+        <!-- Social Link -->
+        <a href="https://instagram.com/riccardo.martone" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+          Instagram @riccardo.martone ↗
+        </a>
+      </aside>
+
+      <!-- COLONNA DESTRA: Bio, Showreel, CV -->
+      <main class="main-content">
+        
+        <!-- BIOGRAFIA -->
+        <section>
+          <div class="section-header">
+            <h2>BIOGRAFIA</h2>
+          </div>
+          <p class="bio-p">
+            Riccardo Martone (1999) si laurea al Centro Sperimentale di Cinematografia nel 2024. 
+            Prosegue gli studi nel corso magistrale dell'Accademia Nazionale d'Arte Drammatica Silvio D'Amico. 
+            Lavora tra cinema, cortometraggi e teatro (tra cui la tournée di <em>"Tre Sorelle"</em> prodotta dal Teatro Stabile di Torino) 
+            ed è coordinatore generale del collettivo cinematografico indipendente <strong>Giriamola!</strong>.
+          </p>
+        </section>
+
+        <!-- SHOWREEL -->
+        <section>
+          <div class="section-header">
+            <h2>SHOWREEL</h2>
+          </div>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_QUI" title="Riccardo Martone Showreel" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <!-- CURRICULUM VITAE -->
+        <section>
+          <div class="section-header">
+            <h2>CURRICULUM VITAE</h2>
+            <a href="../CV Riccardo Martone.pdf" download class="cv-download-link">📥 Scarica PDF</a>
+          </div>
+
+          <div class="cv-group">
+            <h3>CINEMA</h3>
+            <ul class="cv-items">
+              <li><strong>Oscar</strong> (2026) — Regia di Federico Pari Tallone <em>(Protagonista)</em></li>
+            </ul>
+          </div>
+
+          <div class="cv-group">
+            <h3>CORTOMETRAGGI</h3>
+            <ul class="cv-items">
+              <li><strong>Tu Mi Piaci, Ma Non Corriamo</strong> (2026, prod. Giriamola!) — Regia di Lorenzo Lancellotti <em>(Protagonista - Menzione Speciale Rai Cinema & Premio Miglior Sceneggiatura)</em></li>
+              <li><strong>Il Fulmine Verde</strong> (2024) — Regia di Tommaso Diaceri <em>(Co-protagonista - Premio Giuria Fano Film Festival)</em></li>
+              <li><strong>Incartati</strong> (2023) — Regia di Federico Pari Tallone</li>
+              <li><strong>Le Petite Mort</strong> (2022) — Regia di Emanuele Daga</li>
+              <li><strong>Mors Ignis</strong> (2021) — Regia di Borja Aracil</li>
+            </ul>
+          </div>
+
+          <div class="cv-group">
+            <h3>TEATRO</h3>
+            <ul class="cv-items">
+              <li><strong>Pseudolus</strong> (2026-2027) — Regia di Enrico Zaccheo <em>(Ruolo: Calidoro)</em></li>
+              <li><strong>Tre Sorelle. Nevica, che senso ha?</strong> (2026, Teatro Stabile di Torino) — Regia di Liv Ferracchiati <em>(Ruolo: Tuzenbach)</em></li>
+              <li><strong>Revolt. She said. Revolt Again.</strong> (2026) — Regia di Liv Ferracchiati</li>
+              <li><strong>Prestare Attenzione</strong> (2025) — Regia di Giacomo Bisordi <em>(tratto da "Il Re Pallido" di David Foster Wallace)</em></li>
+              <li><strong>Some Explicit Polaroids</strong> (2025) — Regia di Lorenzo Collalti <em>(Ruolo: Tim)</em></li>
+              <li><strong>Irene K.</strong> (2024, CSC / Teatro di Roma) — Regia di Gianluca Iumiento <em>(Protagonista)</em></li>
+              <li><strong>Comenciniamo</strong> (2024) — Regia di Mario Grossi</li>
+              <li><strong>I Fratelli Karamazov</strong> (2022) — Regia di Eljana Popova <em>(Ruolo: Dmitrij)</em></li>
+            </ul>
+          </div>
+
+          <div class="cv-group">
+            <h3>FORMAZIONE</h3>
+            <ul class="cv-items">
+              <li><strong>Accademia Nazionale D'Arte Drammatica Silvio D'Amico</strong> — Magistrale (2025 - 2026)</li>
+              <li><strong>Centro Sperimentale di Cinematografia</strong> — Laurea in Recitazione (2021 - 2024)</li>
+            </ul>
+          </div>
+
+          <div class="cv-group">
+            <h3>COMPETENZE</h3>
+            <p style="color:#ccc; font-size:0.95rem;">Basi di pianoforte, Basi di acrobatica, Nuoto, Pallavolo, Calcio.</p>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+</body>
+</html>
