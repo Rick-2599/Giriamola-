@@ -565,7 +565,7 @@ header {
             color: #fff;
         }
 /* ==========================================
-   OPTIMIZATION MOBILE / LOGO & MENU INTERATTIVO
+   OPTIMIZATION MOBILE DEFINTIVA
    ========================================== */
 
 @media screen and (max-width: 800px) {
@@ -578,6 +578,7 @@ header {
     padding: 0 !important;
   }
 
+  /* 1. Header compatto in alto */
   header {
     display: flex !important;
     flex-direction: row !important;
@@ -585,56 +586,43 @@ header {
     align-items: center !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    padding: 14px 20px !important;
+    padding: 12px 18px !important;
     background: #000 !important;
     position: relative !important;
     z-index: 1000 !important;
   }
 
-  /* Logo visibile e di grandi dimensioni */
+  /* Logo GIRIAMOLA! bello grande */
   header .logo,
   header a.logo,
   header > a,
   .logo {
     display: flex !important;
     align-items: center !important;
-    color: #fff !important;
-    font-size: 1.4rem !important;
-    font-weight: 800 !important;
-    text-decoration: none !important;
   }
 
   header .logo img,
   header img {
-    height: 42px !important;
+    height: 45px !important; /* Logo grande */
     width: auto !important;
     display: block !important;
   }
 
-  /* Icona tre lineette cliccabile */
-  .mobile-menu-toggle {
-    display: block !important;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-    user-select: none;
-  }
-
-  /* Stato di default del menu nav su mobile: nascosto */
+  /* 2. NASCONDE IL MENU DI DEFAULT (Così la pagina non viene coperta) */
   header nav {
-    display: none;
+    display: none !important; 
     flex-direction: column !important;
     position: absolute !important;
     top: 100% !important;
     left: 0 !important;
     width: 100% !important;
     background: #000 !important;
-    border-bottom: 2px solid var(--fuchsia, #ff007a) !important;
+    border-bottom: 2px solid #ff007a !important;
     padding: 10px 0 !important;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.8) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.9) !important;
   }
 
-  /* Stato quando il menu viene aperto (cliccando le lineette) */
+  /* 3. MOSTRA IL MENU SOLO QUANDO CLICCHI SULLE TRE LINEETTE */
   header nav.mobile-open {
     display: flex !important;
   }
@@ -644,12 +632,21 @@ header {
     padding: 14px 20px !important;
     color: #fff !important;
     text-decoration: none !important;
-    border-bottom: 1px solid #1a1a1a !important;
+    border-bottom: 1px solid #222 !important;
     font-size: 1rem !important;
-    text-align: left !important;
+    text-align: center !important;
   }
 
-  /* Layout griglie e rimozione testi prolissi */
+  /* Icona tre lineette a destra nell'header */
+  .mobile-menu-toggle {
+    display: block !important;
+    font-size: 2.2rem !important;
+    color: #fff !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+  }
+
+  /* 4. Griglie a 2 colonne pulite e minimali */
   .grid-3, 
   .projects-grid, 
   .members-grid,
@@ -660,9 +657,9 @@ header {
     padding: 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    margin: 0 auto !important;
   }
 
+  /* Nasconde testi lunghi e sinossi per mantenere le card minimali */
   .project-card p,
   .card p:not(.member-role),
   .project-info p,
@@ -671,19 +668,18 @@ header {
   }
 
   .project-card, .card {
-    padding: 10px !important;
+    padding: 8px !important;
     box-sizing: border-box !important;
   }
 
   .project-card h3, .card h3 {
-    font-size: 1rem !important;
-    margin: 8px 0 4px 0 !important;
+    font-size: 0.95rem !important;
+    margin: 6px 0 2px 0 !important;
     text-align: center !important;
   }
 
   .member-role {
     font-size: 0.75rem !important;
-    line-height: 1.2 !important;
     text-align: center !important;
   }
 
@@ -693,6 +689,7 @@ header {
     box-sizing: border-box !important;
     width: 100% !important;
   }
+}
 
     </style>
 </head>
