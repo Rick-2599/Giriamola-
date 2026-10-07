@@ -565,31 +565,47 @@ header {
             color: #fff;
         }
 /* ==========================================
-   STRUTTURA MOBILE PULITA
+   STRUTTURA MOBILE COMPATTA CON LOGO E MENU
    ========================================== */
 
 @media screen and (max-width: 800px) {
 
-  /* 1. Header orizzontale compatto */
+  /* Header fisso in alto orizzontale */
   header {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
     padding: 12px 20px !important;
+    background: #000 !important;
+  }
+
+  /* Mostra e ridimensiona il logo a sinistra */
+  header .logo, 
+  header a.logo {
+    display: block !important;
   }
 
   header .logo img {
-    height: 32px !important;
+    height: 28px !important;
     width: auto !important;
   }
 
-  /* 2. Nasconde i link lunghi del menu per non occupare la pagina */
-  nav {
+  /* Nasconde le voci di testo singole per non occupare la pagina */
+  nav a {
     display: none !important;
   }
 
-  /* 3. Banner ed elementi principali */
+  /* Mostra l'icona del menu a tre lineette a destra */
+  nav::after {
+    content: "☰";
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: block;
+  }
+
+  /* Banner ed elementi principali adattati alla larghezza schermo */
   .hero-section, 
   .video-container {
     width: 100% !important;
@@ -597,7 +613,7 @@ header {
     border-radius: 0 !important;
   }
 
-  /* 4. Griglia Progetti e Membri a 2 colonne afiancate */
+  /* Griglia Progetti e Membri a 2 colonne affiancate stile locandina */
   .grid-3, 
   .projects-grid, 
   .members-grid {
@@ -612,10 +628,9 @@ header {
     padding-right: 10px !important;
   }
 
-  /* Riduzione dimensione titoli */
+  /* Riduzione della dimensione dei titoli per il telefono */
   h1 { font-size: 1.8rem !important; }
   h2 { font-size: 1.4rem !important; }
-}
 }
     </style>
 </head>
