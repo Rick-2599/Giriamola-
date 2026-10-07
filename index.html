@@ -564,61 +564,73 @@ header {
             background: var(--fuchsia);
             color: #fff;
         }
-        /* ==========================================
-   ADATTAMENTO MOBILE / SMARTPHONE
+       /* ==========================================
+   STRUTTURA MOBILE TIPO FANDANGO
    ========================================== */
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 @media screen and (max-width: 800px) {
-  .grid-3, 
-  .members-grid, 
-  .member-grid,
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+
+  /* 1. Header compatto con spaziatura pulita */
+  header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 20px !important;
   }
 
-  body, 
-  .container, 
-  .member-page-container {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
+  header .logo img {
+    height: 32px !important;
+    width: auto !important;
   }
 
-  h1 { font-size: 2.2rem !important; }
-  h2 { font-size: 1.6rem !important; }
-  h3 { font-size: 1.3rem !important; }
-
-  .card-cta, 
-  .agency-btn, 
-  .social-link-btn, 
-  .back-btn {
-    padding: 14px 18px !important;
-    display: block !important;
-    text-align: center !important;
-    font-size: 1rem !important;
-  }
-
-  .sidebar-card {
-    position: relative !important;
-    top: 0 !important;
+  /* 2. Menu di navigazione a comparsa/colonna */
+  nav {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #111 !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
     width: 100% !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid #333 !important;
   }
+
+  nav a {
+    padding: 12px 20px !important;
+    text-align: left !important;
+    border-bottom: 1px solid #222 !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* 3. Layout Hero / Banner full width */
+  .hero-section, 
+  .video-container {
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* 4. Griglia Progetti/Membri a 2 colonne stile locandina */
+  .grid-3, 
+  .projects-grid, 
+  .members-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    padding: 12px !important;
+  }
+
+  /* Riduzione margini per evitare spazi vuoti */
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Titoli proporzionati allo schermo */
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.4rem !important; }
 }
     </style>
 </head>
