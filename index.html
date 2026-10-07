@@ -564,6 +564,62 @@ header {
             background: var(--fuchsia);
             color: #fff;
         }
+        /* ==========================================
+   ADATTAMENTO MOBILE / SMARTPHONE
+   ========================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .grid-3, 
+  .members-grid, 
+  .member-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  body, 
+  .container, 
+  .member-page-container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.6rem !important; }
+  h3 { font-size: 1.3rem !important; }
+
+  .card-cta, 
+  .agency-btn, 
+  .social-link-btn, 
+  .back-btn {
+    padding: 14px 18px !important;
+    display: block !important;
+    text-align: center !important;
+    font-size: 1rem !important;
+  }
+
+  .sidebar-card {
+    position: relative !important;
+    top: 0 !important;
+    width: 100% !important;
+  }
+}
     </style>
 </head>
 <body>
