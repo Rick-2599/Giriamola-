@@ -565,19 +565,21 @@ header {
             color: #fff;
         }
 /* ==========================================
-   STRUTTURA MOBILE FIX LARGHEZZA E HEADER
+   OPTIMIZATION MOBILE / MINIMALE E CENTRATO
    ========================================== */
 
 @media screen and (max-width: 800px) {
 
-  /* Blocca la larghezza della pagina per evitare lo scorrimento orizzontale */
+  /* 1. Reset completo per centrare la pagina senza tagli laterali */
   html, body {
     width: 100% !important;
-    max-width: 100vw !important;
+    max-width: 100% !important;
     overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Header fisso orizzontale */
+  /* 2. Header orizzontale compatto e Logo più grande */
   header {
     display: flex !important;
     flex-direction: row !important;
@@ -585,63 +587,76 @@ header {
     align-items: center !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    padding: 12px 16px !important;
+    padding: 14px 20px !important;
     background: #000 !important;
   }
 
-  /* Mostra sempre il logo GIRIAMOLA! a sinistra */
-  header a, 
-  header .logo {
-    display: flex !important;
-    align-items: center !important;
-    max-width: 70% !important;
-  }
-
+  header .logo img,
   header img {
-    max-height: 30px !important;
+    height: 48px !important; /* Logo reso nettamente più grande e leggibile */
     width: auto !important;
     display: block !important;
   }
 
-  /* Nasconde i link testuali singoli per mantenere la barra pulita */
   nav a {
     display: none !important;
-  }
-
-  /* Mostra l'icona menu a destra nello spazio corretto */
-  nav {
-    display: flex !important;
-    align-items: center !important;
   }
 
   nav::after {
     content: "☰";
     color: #fff;
-    font-size: 1.8rem;
-    line-height: 1;
+    font-size: 2rem;
     cursor: pointer;
   }
 
-  /* Impedisce alle immagini e sezioni sotto di sporgere dallo schermo */
-  section, .hero-section, .video-container, img, video, iframe {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Layout griglia a 2 colonne per le locandine */
+  /* 3. Centramento griglie a 2 colonne affiancate perfettamente bilanciate */
   .grid-3, 
   .projects-grid, 
-  .members-grid {
+  .members-grid,
+  #modal-all-members .grid-3 {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
     padding: 12px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    margin: 0 auto !important;
   }
 
-  h1 { font-size: 1.6rem !important; }
-  h2 { font-size: 1.3rem !important; }
+  /* 4. Layout minimale per i progetti: nasconde i testi lunghi in anteprima */
+  .project-card p,
+  .card p:not(.member-role),
+  .project-info p,
+  .project-description {
+    display: none !important; /* Nasconde descrizioni, sinossi e dettagli prolissi */
+  }
+
+  /* Riduce gli spazi e la dimensione dei testi rimanenti */
+  .project-card, .card {
+    padding: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-card h3, .card h3 {
+    font-size: 1rem !important;
+    margin: 8px 0 4px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Minimizza i ruoli e i badge */
+  .member-role {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  /* 5. Contenitore principale centrato */
+  .container, section {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
 }
     </style>
 </head>
