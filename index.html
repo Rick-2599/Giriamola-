@@ -565,7 +565,7 @@ header, nav, .navbar {
             color: #fff;
         }
 /* ==========================================
-   OPTIMIZATION MOBILE DEFINTIVA
+   FIX DEFINTIVO: HEADER COMPATTO E LOGO GRANDE
    ========================================== */
 
 @media screen and (max-width: 800px) {
@@ -578,44 +578,60 @@ header, nav, .navbar {
     padding: 0 !important;
   }
 
-  /* Header fisso orizzontale */
+  /* 1. Header bloccato in altezza a 60px max */
   header {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
     width: 100% !important;
+    height: 60px !important; /* Forza l'altezza della barra */
+    min-height: 60px !important;
+    max-height: 60px !important;
     box-sizing: border-box !important;
-    padding: 12px 20px !important;
+    padding: 0 16px !important;
     background: #000 !important;
     position: relative !important;
     z-index: 1000 !important;
   }
 
-  /* LOGO GRANDE A SINISTRA */
-  header .logo img, 
-  header img {
-    height: 55px !important; /* Dimensione ben visibile */
-    width: auto !important;
-    display: block !important;
+  /* 2. Logo ingrandito e senza vincoli dell'immagine */
+  header a.logo,
+  header .logo {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
   }
 
-  /* ICONA TRE LINEETTE A DESTRA */
-  .mobile-menu-toggle {
+  header .logo img, 
+  header img {
+    height: 38px !important;
+    width: auto !important;
+    max-height: 38px !important;
     display: block !important;
-    font-size: 2.2rem !important;
+    /* Zoom sull'immagine se ha spazi trasparenti attorno */
+    transform: scale(1.8) !important; 
+    transform-origin: left center !important;
+  }
+
+  /* 3. Icona ☰ centrata a destra */
+  .mobile-menu-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 2rem !important;
     color: #fff !important;
     cursor: pointer !important;
     line-height: 1 !important;
-    user-select: none !important;
+    height: 100% !important;
   }
 
-  /* MENU NASCOSTO DI DEFAULT */
+  /* 4. Menu nav sottostante */
   header nav {
     display: none !important;
     flex-direction: column !important;
     position: absolute !important;
-    top: 100% !important;
+    top: 60px !important; /* Parte subito sotto l'header di 60px */
     left: 0 !important;
     width: 100% !important;
     background: #000 !important;
@@ -624,7 +640,6 @@ header, nav, .navbar {
     box-shadow: 0 10px 20px rgba(0,0,0,0.9) !important;
   }
 
-  /* MENU APERTO AL TOCCO */
   header nav.mobile-open {
     display: flex !important;
   }
@@ -639,7 +654,7 @@ header, nav, .navbar {
     text-align: center !important;
   }
 
-  /* Griglie a 2 colonne e testo minimale */
+  /* Layout griglie minimali a 2 colonne */
   .grid-3, 
   .projects-grid, 
   .members-grid,
