@@ -573,17 +573,23 @@ header, nav, .navbar {
   display: none !important;
 }
 
-/* Header elegante e ben proporzionato per PC */
 header {
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding: 15px 40px !important; /* Aggiunge rientro dai bordi sinistro e destro */
-  max-width: 1400px !important;  /* Evita che gli elementi tocchino i bordi su schermi giganti */
-  margin: 0 auto !important;     /* Centra l'header sullo schermo */
-  height: auto !important;
+  padding: 8px 40px !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  height: 50px !important;
   box-sizing: border-box !important;
+}
+
+header .logo img, 
+header img {
+  height: 32px !important;
+  width: auto !important;
+  display: block !important;
 }
 
 header nav {
